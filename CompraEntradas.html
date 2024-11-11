@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Butacazo - Comprar Entradas</title>
+    <link rel="stylesheet" href="">
+    <link rel="icon" type="image" href="/img/logo.png">
+</head>
+<body class="pagina">
+
+    <header class="header">
+        <div class="header__elbutacazo">
+            <img src="logo.png" alt="logo el butacazo" class="header__logo">
+            <nav class="header__enlaces">
+                <a href="#" class="header__enlace">películas</a>
+                <a href="#" class="header__enlace">elige cine</a>
+                <a href="#" class="header__enlace">comprueba tu compra</a>
+                <a href="#" class="header__enlace--secundario">Iniciar Sesión</a>
+                <a href="#" class="header__enlace--secundario">Registrarse</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pagina__contenido">
+        <section class="compra">
+            <div class="compra__info">
+                <img src="logo_butacazo.png" alt="Logo El Butacazo" class="compra__logo">
+                <h2 class="compra__titulo"></h2>
+                <p class="compra__sala"></p>
+            </div>
+
+            <hr class="compra__separador">
+
+            <div class="compra__entradas">
+                <h3 class="compra__subtitulo">SUS ENTRADAS</h3>
+                <p class="compra__instruccion">Elija precio y número de entradas, máximo de 10 entradas por compra</p>
+
+                <div class="compra__control">
+                    <label class="compra__precio">Entradas</label>
+                    <span class="compra__precio-valor">3,50€</span>
+
+                    <div class="compra__cantidad">
+                        <button class="compra__boton-menos">−</button>
+                        <input type="number" value="0" min="0" max="10" class="compra__input">
+                        <button class="compra__boton-mas">+</button>
+                    </div>
+                </div>
+
+                <div class="compra__acciones">
+                    <button class="compra__boton-volver">← Volver</button>
+                    <button class="compra__boton-continuar">Continuar →</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__elbutacazo">
+            <a href="#" class="footer__enlace">Contacto</a>
+            <a href="#" class="footer__enlace">Condiciones de compra</a>
+            <a href="#" class="footer__enlace">Política de privacidad</a>
+            <a href="#" class="footer__enlace">Política de cookies</a>
+        </div>
+        <div class="footer__patrocinadores">
+            <img src="" alt="" class="footer__imagen">
+        </div>
+        <p class="footer__copyright">
+            &copy; 2004 - 2024 EL BUTACAZO 33, S.L. Todos los derechos reservados /
+            Contacto: admin@elbutacazo.com
+        </p>
+    </footer>
+
+</body>
+</html>
