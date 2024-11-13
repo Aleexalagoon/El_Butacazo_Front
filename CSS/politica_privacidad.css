@@ -1,0 +1,89 @@
+/*MOVIL*/
+.footer {
+    background-color: #3bd5fd; 
+    color: white;
+    text-align: center;
+    padding: 15px 0px;
+    margin: 0;
+}
+
+.footer__elbutacazo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.footer__elbutacazo .footer__enlace {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer__elbutacazo .footer__enlace:hover {
+    color: #000000;
+}
+
+.footer__patrocinadores {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.footer__patrocinadores .footer__imagen {
+    height: 25px;
+    max-width: 80px;
+}
+
+.footer__copyright {
+    background-color: black;
+    color: white;
+    font-size: 10px;
+    padding: 8px;
+    margin: 0;
+    margin-bottom: -10%;
+}
+
+.footer__copyright a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 5px;
+}
+
+/*PC*/
+@media (min-width: 600px) {
+    .footer {
+        padding: 20px 0px;
+    }
+
+    .footer__elbutacazo {
+        flex-direction: row;
+        font-size: 14px;
+        gap: 20px;
+    }
+
+    .footer__patrocinadores {
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    .footer__patrocinadores .footer__imagen {
+        height: 30px;
+        max-width: 100px;
+    }
+
+    .footer__copyright {
+        font-size: 12px;
+        padding: 10px;
+        margin: 0;
+        margin-bottom: -2%;
+    }
+}
