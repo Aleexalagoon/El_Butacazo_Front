@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="icon" type="image" href="/img/logo.png">
+</head>
+
+<body class="pagina">
+
+    <header class="header">
+        <div class="header__elbutacazo">
+            <img src="./img/logo2.png" alt="logo el butacazo" class="header__logo"> EL BUTACAZO
+            <nav class="header__enlaces">
+                <a href="#" class="header__enlace">Próximos Estrenos</a>
+                <a href="#" class="header__enlace">Cartelera</a>
+                <a href="#" class="header__enlace">Nuestra Historia</a>
+                <a href="./login.html" class="header__enlace--secundario">Iniciar Sesión</a>
+                <a href="#" class="header__enlace--secundario">Registrarse</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="login">
+        <h1 class="login_titulo"> Iniciar Sesión </h1>
+
+        <form class="login_formulario" action="" method="post">
+            <label class="login_label" for="correo">Correo electrónico</label>
+            <input class="login_input" type="email" id="correo" name="correo" required>
+
+            <label class="login__label" for="contrasena">Contraseña</label>
+            <input class="login__input" type="password" id="contrasena" name="contrasena" required>
+
+            <div class="login__opciones">
+                <label class="login__checkbox-label">
+                <input class="login__checkbox" type="checkbox" name="recordar">Recuérdame</label>
+
+                <button class="login__boton" type="submit">Entrar</button>
+
+                <p class="login__texto">¿No tienes una cuenta? <a href="" class="login__enlace">Regístrate aquí</a></p>
+        </form>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__elbutacazo">
+            <a href="./contacto.html" class="footer__enlace">Contacto</a>
+            <a href="./condiciones_compra.html" class="footer__enlace">Condiciones de compra</a>
+            <a href="./politica_privacidad.html" class="footer__enlace">Política de privacidad</a>
+            <a href="./cookies.html" class="footer__enlace">Política de cookies</a>
+        </div>
+        <div class="footer__patrocinadores">
+            <img src="" alt="" class="footer__imagen">
+            <img src="" alt="" class="footer__imagen">
+        </div>
+        <p class="footer__copyright">
+            &copy; 2004 - 2024 EL BUTACAZO 33, S.L. Todos los derechos reservados / Contacto: admin@elbutacazo.com
+        </p>
+    </footer>
