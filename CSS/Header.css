@@ -25,7 +25,7 @@
 }
 
 .header__logo {
-    height: 40px; 
+    height: 100px;
     margin-bottom: 10px;
 }
 
@@ -43,15 +43,39 @@
     padding: 10px 0;
 }
 
+.header__logo__enlaces {
+    width: 18px;
+    height: 18px;
+}
+
 .header__enlace {
     color: #ffffff; 
     text-decoration: none;
     font-size: 16px; 
-    margin: 0 10px; 
+    margin: 0 10px;
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
+
 .header__enlace:hover {
-    color: #ffffff; 
+    color: #000000; 
+    background-color: #ffffff; 
+    border-radius: 5px; 
+}
+
+
+.header__enlace::after {
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #ffffff;
+    transition: width 0.3s;
+    margin-top: 2px;
+}
+
+
+.header__enlace:hover::after {
+    width: 100%;
 }
 
 
@@ -61,7 +85,7 @@
     }
 
     .header__logo {
-        height: 50px; 
+        height: 150px; 
     }
 
     .header__title {
