@@ -1,0 +1,80 @@
+.pagina__contenido {
+  padding: 20px;
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .pagina__contenido {
+    padding: 30px;
+  }
+}
+@media (min-width: 1024px) {
+  .pagina__contenido {
+    padding: 40px;
+  }
+}
+
+.pelicula {
+  margin: 20px auto;
+  max-width: 900px;
+}
+.pelicula__titulo {
+  font-size: 2em;
+  text-align: center;
+  color: #222;
+  margin-bottom: 20px;
+}
+.pelicula__detalle {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+@media (min-width: 768px) {
+  .pelicula__detalle {
+    flex-direction: row;
+  }
+}
+.pelicula__detalle__poster {
+  max-width: 300px;
+  border-radius: 5px;
+}
+.pelicula__detalle__informacion-video {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.pelicula__detalle__informacion__campo {
+  font-size: 1em;
+  color: #666;
+}
+.pelicula__detalle__informacion__campo strong {
+  color: #222;
+}
+.pelicula__detalle__informacion__boton {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1em;
+  cursor: pointer;
+}
+.pelicula__detalle__informacion__boton:hover {
+  background-color: #0056b3;
+}
+.pelicula__detalle__trailer__video {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.pelicula__sinopsis {
+  margin-top: 20px;
+}
+.pelicula__sinopsis-texto {
+  font-size: 1em;
+  line-height: 1.6;
+  color: #555;
+}
+
+/*# sourceMappingURL=ConfirmacionCompraPelicula.css.map */

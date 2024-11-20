@@ -1,0 +1,89 @@
+@use "../base/variables" as *;
+@use "../base/mixsins" as *;
+
+.pagina {
+    &__contenido {
+      @include pagina-contenido;
+    }
+  }
+  
+  .pelicula {
+    margin: 20px auto;
+    max-width: $max-width-tablet;
+  
+    &__titulo {
+      font-size: 2em;
+      text-align: center;
+      color: $color-dark;
+      margin-bottom: 20px;
+    }
+  
+    &__detalle {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+  
+      @media (min-width: 768px) {
+        flex-direction: row;
+      }
+  
+      &__poster {
+        max-width: 300px;
+        border-radius: $border-radius;
+      }
+  
+      &__informacion-video {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+  
+      &__informacion {
+        &__campo {
+          font-size: 1em;
+          color: $color-helper;
+  
+          strong {
+            color: $color-dark;
+          }
+        }
+  
+        &__boton {
+          margin-top: 15px;
+          padding: 10px 20px;
+          background-color: $color-primary;
+          border: none;
+          border-radius: $border-radius;
+          color: $color-light;
+          font-size: 1em;
+          cursor: pointer;
+  
+          &:hover {
+            background-color: $color-primary-hover;
+          }
+        }
+      }
+  
+      &__trailer {
+        &__video {
+          width: 100%;
+          border-radius: $border-radius;
+          border: 1px solid $border-color;
+        }
+      }
+    }
+  
+    &__sinopsis {
+      margin-top: 20px;
+  
+      &-texto {
+        font-size: 1em;
+        line-height: $line-height;
+        color: $color-muted;
+      }
+    }
+  }
+  
+
+  

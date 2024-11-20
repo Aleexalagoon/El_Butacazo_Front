@@ -15,4 +15,11 @@
       #{$property}: $desktop-value;
     }
   }
+
+  @mixin pagina-contenido {
+    padding: 20px;
+    @include responsive(padding, 20px, 30px, 40px);
+  }
+  
+
   
