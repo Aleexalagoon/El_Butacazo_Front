@@ -1,3 +1,7 @@
+@use "../base/variables" as *;
+@use "../base/mixsins" as *;
+
+
 .principal {
     width: 100%;
     max-width: $max-width-mobile;
