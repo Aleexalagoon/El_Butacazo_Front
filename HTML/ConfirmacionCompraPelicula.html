@@ -3,100 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compra de Entradas - El Butacazo</title>
+    <title>Detalles de Compra - El Butacazo</title>
+    <link rel="stylesheet" href="../CSS/ConfirmacionCompra.css"> 
+    <link rel="stylesheet" href="../CSS/Header.css">
     <link rel="icon" type="image" href="/img/logo.png">
     <link rel="stylesheet" href="../CSS/ConfirmaciónCompraPelicula.css"> 
     <link rel="stylesheet" href="../CSS/Header.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
+    
     <header class="header">
-        <div class="header__top">
-            <img src="../img/logo2.png" alt="logo el butacazo" class="header__logo">
-            <h1 class="header__title">EL BUTACAZO</h1>
+        <div class="header__elbutacazo">
+            <img src="logo.png" alt="logo el butacazo" class="header__logo">
+            <nav class="header__enlaces">
+                <a href="#" class="header__enlace">películas</a>
+                <a href="#" class="header__enlace">elige cine</a>
+                <a href="#" class="header__enlace">comprueba tu compra</a>
+                <a href="#" class="header__enlace--secundario">Iniciar Sesión</a>
+                <a href="#" class="header__enlace--secundario">Registrarse</a>
+            </nav>
         </div>
-        <nav class="header__nav">
-            <img src="../img/calendario.png" alt="logos enlace" class="header__logo__enlaces">
-            <a href="#" class="header__enlace">Películas</a>
-            <img src="../img/carrete-de-pelicula.png" alt="logos enlace" class="header__logo__enlaces">
-            <a href="#" class="header__enlace">Elige Cine</a>
-            <img src="../img/libro.png" alt="logos enlace" class="header__logo__enlaces">
-            <a href="#" class="header__enlace">Comprueba Tu Compra</a>
-            <a href="#" class="header__enlace--secundario">Iniciar Sesión</a>
-            <a href="#" class="header__enlace--secundario">Registrarse</a>
-        </nav>
     </header>
-
-
-  
-    <main class="titulo">
-        <h1 class="compra__titulo">Datos de su compra</h1>
-
-        <div class="compra__botones-container">
+    
+    
+    <main class="principal">
+        <section class="compra">
+            <h1 class="compra__titulo">Datos de su compra</h1>
             <button class="compra__botones">
                 <span class="volver__boton">&#8592;</span> Volver
             </button>
             <button class="compra__botones">
                 Aceptar y Pagar →
             </button>
-        </div>
-    </main>
-    <main class="compra">
-    
-        <div class="compra__detalles">
-            <img src="../img/logo.png" alt="Poster de la película" class="compra__imagen">
-            <div class="compra__informacion">
-                <p class="informacion__item"><strong>Película:</strong> Shin Chan</p>
-                <p class="informacion__item"><strong>Cine:</strong> El Butacazo</p>
-                <p class="informacion__item"><strong>Sala:</strong> Sala 33</p>
-                <p class="informacion__item"><strong>Día:</strong> 07-11-2024</p>
-                <p class="informacion__item"><strong>Hora:</strong> 20:00</p>
-                <p class="informacion__item"><strong>Empresa:</strong> El Butacazo</p>
-                <p class="informacion__item"><strong>CP:</strong> 50014</p>
-                <p class="informacion__item"><strong>Teléfono:</strong> 894-568-215</p>
-                <p class="informacion__item"><strong>Localidad:</strong> Zaragoza</p>
-                <p class="informacion__item"><strong>Provincia:</strong> Zaragoza</p>
-                <p class="informacion__item"><strong>Forma de pago:</strong> Tarjeta bancaria</p>
+            
+            <div class="compra__detalles">
+                <img src="imagen-pelicula.jpg" alt="" class="detalles__imagen">
+                
+                <div class="detalles__informacion">
+                    <p class="informacion__item"><strong>Película:</strong> Shin Chan</p>
+                    <p class="informacion__item"><strong>Cine:</strong> El Butacazo</p>
+                    <p class="informacion__item"><strong>Sala:</strong> Sala 33</p>
+                    <p class="informacion__item"><strong>Día:</strong> 07-11-2024</p>
+                    <p class="informacion__item"><strong>Hora:</strong> 20:00</p>
+                    <p class="informacion__item"><strong>Empresa:</strong> El Butacazo</p>
+                    <p class="informacion__item"><strong>CP:</strong> 50014</p>
+                    <p class="informacion__item"><strong>Teléfono:</strong> 894-568-215</p>
+                    <p class="informacion__item"><strong>Localidad:</strong> Zaragoza</p>
+                    <p class="informacion__item"><strong>Provincia:</strong> Zaragoza</p>
+                    <p class="informacion__item"><strong>Forma de pago:</strong> Tarjeta bancaria</p>
+                </div>
             </div>
-        </div>
-
-     
-        <div class="compra__resumen">
-            <table class="resumen__tabla">
-                <thead>
-                    <tr>
-                        <th>Fila</th>
-                        <th>Butaca</th>
-                        <th>Precio</th>
-                        <th>Gafas 3D</th>
-                        <th>Total</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>3</td>
-                        <td>5</td>
-                        <td>3.50€</td>
-                        <td>0.00€</td>
-                        <td>3.50€</td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="resumen__detalles">
-                <p><strong>Suplemento de butaca:</strong> 0.00€</p>
-                <p><strong>Complementos opcionales:</strong> 0.00€</p>
-                <p><strong>Comida:</strong> 0.00€</p>
-                <p class="total"><strong>Total compra:</strong> 3.50€</p>
+            
+            <div class="compra__resumen">
+                <table class="resumen__tabla">
+                    <thead class="tabla__encabezado">
+                        <tr>
+                            <th>Fila</th>
+                            <th>Butaca</th>
+                            <th>Precio</th>
+                            <th>Gafas 3D</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody class="tabla__cuerpo">
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="resumen__detalles">
+                    <p><strong>Suplemento de butaca:</strong></p>
+                    <p><strong>Complementos opcionales:</strong></p>
+                    <p><strong>Comida:</strong></p>
+                    <p><strong>Total compra:</strong></p>
+                </div>
+                
+                <p class="resumen__nota">
+                    * Impuestos incluidos. El total incluye todos los costes de gestión que pudieran derivarse de la operación de compra.
+                </p>
             </div>
-            <p class="resumen__nota">
-                * Impuestos incluidos. El total incluye todos los costes de gestión que pudieran derivarse de la operación de compra.
-            </p>
-        </div>
-    </main>
-
-    
-    <section class="cliente">
+            
+        </section>
+        
+        <section class="cliente">
             <h2 class="cliente__titulo">Datos del Cliente</h2>
             <form class="cliente__formulario" action="#" method="post">
                 <div class="formulario__campo">
