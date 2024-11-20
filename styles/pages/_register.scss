@@ -1,0 +1,120 @@
+.principal {
+    width: 100%;
+    max-width: $max-width-mobile;
+    background-color: $color-light;
+    padding: 20px;
+    border-radius: 10px;
+  
+    @media (min-width: 768px) {
+      max-width: $max-width-tablet;
+      padding: 40px;
+      margin-left: 450px;
+    }
+  }
+  
+
+  .registro {
+    @include flex-column-center;
+  
+    &__titulo {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: $color-dark;
+      text-align: center;
+  
+      @media (min-width: 768px) {
+        font-size: 2rem;
+      }
+  
+      @media (min-width: 1024px) {
+        font-size: 2.5rem;
+      }
+    }
+  
+    &__formulario {
+      width: 100%;
+  
+      @media (min-width: 1024px) {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+    }
+  
+    &__campo {
+      margin-bottom: 15px;
+      display: flex;
+      flex-direction: column;
+  
+      @media (min-width: 768px) {
+        justify-content: space-between;
+      }
+  
+      @media (min-width: 1024px) {
+        width: calc(50% - 10px);
+      }
+    }
+  
+    &__boton {
+      width: 100%;
+      padding: 10px;
+      font-size: 1rem;
+      color: $color-light;
+      background-color: $color-primary;
+      border: none;
+      border-radius: $border-radius;
+      cursor: pointer;
+      text-align: center;
+  
+      &:hover {
+        background-color: $color-primary-hover;
+      }
+  
+      @media (min-width: 768px) {
+        max-width: 300px;
+        margin: 20px auto 0;
+      }
+  
+      @media (min-width: 1024px) {
+        width: auto;
+      }
+    }
+  }
+  
+ 
+  .campo {
+    &__etiqueta {
+      font-size: 0.9rem;
+      margin-bottom: 5px;
+      color: $color-muted;
+  
+      @media (min-width: 768px) {
+        width: 30%;
+        margin-right: 10px;
+      }
+    }
+  
+    &__entrada {
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid $border-color;
+      border-radius: $border-radius;
+      width: 100%;
+  
+      &:focus {
+        border-color: $color-primary;
+        outline: none;
+        box-shadow: 0 0 2px rgba(0, 123, 255, 0.5);
+      }
+  
+      @media (min-width: 768px) {
+        width: 65%;
+      }
+    }
+  
+    &__ayuda {
+      font-size: 0.8rem;
+      color: $color-helper;
+      margin-top: 5px;
+    }
+  }
