@@ -1,0 +1,129 @@
+@use "../base/variables" as *;
+@use "../base/mixsins" as *;
+
+.contacto {
+    text-align: center;
+  
+    &__titulo {
+      font-size: 2rem;
+      color: $color-dark;
+      margin-bottom: 20px;
+    }
+  
+    &__texto {
+      font-size: 1rem;
+      color: $color-muted;
+      margin-bottom: 15px;
+      line-height: 1.8;
+    }
+  
+    &__subtitulo {
+      font-size: 1.5rem;
+      color: $color-primary;
+      margin: 20px 0;
+    }
+  }
+
+  .contacto__titulo {
+    @include responsive(font-size, 1rem, 1.5rem, 2rem);
+  }
+  
+
+  .formulario-contacto {
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  
+    &__campo {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+  
+      &__label {
+        font-size: 1rem;
+        color: $color-dark;
+      }
+  
+      &__input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid $border-color;
+        border-radius: $border-radius;
+        font-size: 1rem;
+        color: $color-dark;
+  
+        &:focus {
+          outline: none;
+          border-color: $color-primary;
+        }
+      }
+    }
+  
+    &__aceptacion {
+      display: flex;
+      align-items: center;
+      font-size: 0.9rem;
+      color: $color-helper;
+  
+      &__checkbox {
+        margin-right: 5px;
+      }
+  
+      &__texto {
+        font-size: 0.9rem;
+  
+        .formulario-contacto__enlace {
+          color: $color-primary;
+          text-decoration: none;
+  
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  
+    &__boton {
+      width: 100%;
+      background-color: $color-primary;
+      color: $color-light;
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      padding: 10px 15px;
+      border-radius: $border-radius;
+      cursor: pointer;
+      transition: background-color 0.3s;
+  
+      &:hover {
+        background-color: $color-primary-hover;
+      }
+    }
+  }
+  
+
+ 
+  
+  @media (min-width: 768px) {
+    .contacto {
+      &__titulo {
+        font-size: 2.5rem;
+      }
+  
+      &__subtitulo {
+        font-size: 2rem;
+      }
+    }
+  
+    .formulario-contacto {
+      max-width: 600px;
+  
+      &__boton {
+        max-width: 200px;
+        margin: 0 auto;
+      }
+    }
+  }
+  

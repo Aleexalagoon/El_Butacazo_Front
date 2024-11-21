@@ -1,0 +1,114 @@
+.contacto {
+  text-align: center;
+}
+.contacto__titulo {
+  font-size: 2rem;
+  color: #222;
+  margin-bottom: 20px;
+}
+.contacto__texto {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 15px;
+  line-height: 1.8;
+}
+.contacto__subtitulo {
+  font-size: 1.5rem;
+  color: #00c4ff;
+  margin: 20px 0;
+}
+
+.contacto__titulo {
+  font-size: 1rem;
+}
+@media (min-width: 768px) {
+  .contacto__titulo {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .contacto__titulo {
+    font-size: 2rem;
+  }
+}
+
+.formulario-contacto {
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.formulario-contacto__campo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.formulario-contacto__campo__label {
+  font-size: 1rem;
+  color: #222;
+}
+.formulario-contacto__campo__input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #222;
+}
+.formulario-contacto__campo__input:focus {
+  outline: none;
+  border-color: #00c4ff;
+}
+.formulario-contacto__aceptacion {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #666;
+}
+.formulario-contacto__aceptacion__checkbox {
+  margin-right: 5px;
+}
+.formulario-contacto__aceptacion__texto {
+  font-size: 0.9rem;
+}
+.formulario-contacto__aceptacion__texto .formulario-contacto__enlace {
+  color: #00c4ff;
+  text-decoration: none;
+}
+.formulario-contacto__aceptacion__texto .formulario-contacto__enlace:hover {
+  text-decoration: underline;
+}
+.formulario-contacto__boton {
+  width: 100%;
+  background-color: #00c4ff;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.formulario-contacto__boton:hover {
+  background-color: #00c4ff;
+}
+
+@media (min-width: 768px) {
+  .contacto__titulo {
+    font-size: 2.5rem;
+  }
+  .contacto__subtitulo {
+    font-size: 2rem;
+  }
+  .formulario-contacto {
+    max-width: 600px;
+  }
+  .formulario-contacto__boton {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+}
+
+/*# sourceMappingURL=Contacto.css.map */
