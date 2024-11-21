@@ -1,0 +1,25 @@
+@mixin flex-column-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  @mixin responsive($property, $mobile-value, $tablet-value, $desktop-value) {
+    #{$property}: $mobile-value;
+  
+    @media (min-width: 768px) {
+      #{$property}: $tablet-value;
+    }
+  
+    @media (min-width: 1024px) {
+      #{$property}: $desktop-value;
+    }
+  }
+
+  @mixin pagina-contenido {
+    padding: 20px;
+    @include responsive(padding, 20px, 30px, 40px);
+  }
+  
+
+  
