@@ -1,0 +1,94 @@
+@use "../base/variables" as *;
+@use "../base/mixsins" as *;
+
+.header {
+  background-color: $color-primary;
+  color: $color-primary;
+  @include flex-column-center;
+
+  &__top {
+    background-color: $color-dark;
+    display: flex;
+    text-align: center;
+    padding: 15px 0;
+    width: 100%;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+
+    @media (min-width: 768px) {
+      padding: 20px 0;
+    }
+  }
+
+  &__logo {
+    height: 100px;
+    margin-bottom: 10px;
+
+    @media (min-width: 768px) {
+      height: 150px;
+    }
+  }
+
+  &__title {
+    font-size: 24px;
+    color: $color-primary;
+    font-weight: bold;
+
+    @media (min-width: 768px) {
+      font-size: 28px;
+    }
+
+    @media (min-width: 1024px) {
+      font-size: 32px;
+    }
+  }
+
+  &__nav {
+    background-color: $color-primary;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  &__logo__enlaces {
+    width: 18px;
+    height: 18px;
+  }
+
+  &__enlace {
+    color: $color-light;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 0 10px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+
+    &:hover {
+      color: $color-dark;
+      background-color: $color-light;
+      border-radius: $border-radius;
+    }
+
+    &::after {
+      display: block;
+      width: 0;
+      height: 2px;
+      background: $color-light;
+      transition: width 0.3s;
+      margin-top: 2px;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+
+    @media (min-width: 768px) {
+      margin: 0 15px;
+    }
+
+    @media (min-width: 1024px) {
+      font-size: 18px;
+    }
+  }
+}
