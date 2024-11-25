@@ -1,0 +1,72 @@
+@use "../base/variables" as *;
+@use "../base/mixsins" as *;
+
+.pagina {
+    background-color: $color-light;
+    color: $color-dark;
+    @include pagina-contenido;
+  }
+  .politica-privacidad {
+    @include pagina-contenido;
+  
+    &__titulo {
+      font-weight: bold;
+      text-align: center;
+      color: $color-primary;
+  
+      @include responsive(font-size, 24px, 28px, 32px);
+      @include responsive(margin-bottom, 20px, 25px, 30px);
+    }
+  
+    &__articulo {
+      margin-bottom: 20px;
+  
+      h3 {
+        font-weight: bold;
+        color: $color-primary;
+  
+        @include responsive(font-size, 18px, 20px, 24px);
+        @include responsive(margin-bottom, 10px, 15px, 20px);
+      }
+    }
+  
+    &__subtitulo {
+      font-weight: bold;
+      color: $color-primary;
+      margin-bottom: 10px;
+  
+      @include responsive(font-size, 18px, 20px, 24px);
+    }
+  
+    &__texto {
+      color: $color-muted;
+  
+      @include responsive(font-size, 14px, 16px, 18px);
+      @include responsive(line-height, 1.5, 1.6, 1.7);
+      @include responsive(margin-bottom, 15px, 20px, 25px);
+    }
+  
+    &__lista {
+      list-style-type: disc;
+      padding-left: 20px;
+      margin: 10px 0;
+  
+      &__item {
+        color: $color-muted;
+  
+        @include responsive(font-size, 14px, 16px, 18px);
+        @include responsive(margin-bottom, 8px, 10px, 12px);
+      }
+    }
+  
+    &__enlace {
+      color: $color-primary;
+      text-decoration: none;
+  
+      &:hover {
+        color: $color-primary-hover;
+        text-decoration: underline;
+      }
+    }
+  }
+  

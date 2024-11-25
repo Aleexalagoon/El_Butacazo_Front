@@ -1,0 +1,179 @@
+.pagina {
+  background-color: #fff;
+  color: #222;
+  padding: 20px;
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .pagina {
+    padding: 30px;
+  }
+}
+@media (min-width: 1024px) {
+  .pagina {
+    padding: 40px;
+  }
+}
+
+.politica-privacidad {
+  padding: 20px;
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .politica-privacidad {
+    padding: 30px;
+  }
+}
+@media (min-width: 1024px) {
+  .politica-privacidad {
+    padding: 40px;
+  }
+}
+.politica-privacidad__titulo {
+  font-weight: bold;
+  text-align: center;
+  color: #00c4ff;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+@media (min-width: 768px) {
+  .politica-privacidad__titulo {
+    font-size: 28px;
+  }
+}
+@media (min-width: 1024px) {
+  .politica-privacidad__titulo {
+    font-size: 32px;
+  }
+}
+@media (min-width: 768px) {
+  .politica-privacidad__titulo {
+    margin-bottom: 25px;
+  }
+}
+@media (min-width: 1024px) {
+  .politica-privacidad__titulo {
+    margin-bottom: 30px;
+  }
+}
+.politica-privacidad__articulo {
+  margin-bottom: 20px;
+}
+.politica-privacidad__articulo h3 {
+  font-weight: bold;
+  color: #00c4ff;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+@media (min-width: 768px) {
+  .politica-privacidad__articulo h3 {
+    font-size: 20px;
+  }
+}
+@media (min-width: 1024px) {
+  .politica-privacidad__articulo h3 {
+    font-size: 24px;
+  }
+}
+@media (min-width: 768px) {
+  .politica-privacidad__articulo h3 {
+    margin-bottom: 15px;
+  }
+}
+@media (min-width: 1024px) {
+  .politica-privacidad__articulo h3 {
+    margin-bottom: 20px;
+  }
+}
+.politica-privacidad__subtitulo {
+  font-weight: bold;
+  color: #00c4ff;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+@media (min-width: 768px) {
+  .politica-privacidad__subtitulo {
+    font-size: 20px;
+  }
+}
+@media (min-width: 1024px) {
+  .politica-privacidad__subtitulo {
+    font-size: 24px;
+  }
+}
+.politica-privacidad__texto {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+@media (min-width: 768px) {
+  .politica-privacidad__texto {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1024px) {
+  .politica-privacidad__texto {
+    font-size: 18px;
+  }
+}
+@media (min-width: 768px) {
+  .politica-privacidad__texto {
+    line-height: 1.6;
+  }
+}
+@media (min-width: 1024px) {
+  .politica-privacidad__texto {
+    line-height: 1.7;
+  }
+}
+@media (min-width: 768px) {
+  .politica-privacidad__texto {
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 1024px) {
+  .politica-privacidad__texto {
+    margin-bottom: 25px;
+  }
+}
+.politica-privacidad__lista {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin: 10px 0;
+}
+.politica-privacidad__lista__item {
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+@media (min-width: 768px) {
+  .politica-privacidad__lista__item {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1024px) {
+  .politica-privacidad__lista__item {
+    font-size: 18px;
+  }
+}
+@media (min-width: 768px) {
+  .politica-privacidad__lista__item {
+    margin-bottom: 10px;
+  }
+}
+@media (min-width: 1024px) {
+  .politica-privacidad__lista__item {
+    margin-bottom: 12px;
+  }
+}
+.politica-privacidad__enlace {
+  color: #00c4ff;
+  text-decoration: none;
+}
+.politica-privacidad__enlace:hover {
+  color: #00c4ff;
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=PoliticaPrivacidad.css.map */

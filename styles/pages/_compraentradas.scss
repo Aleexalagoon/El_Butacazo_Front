@@ -1,0 +1,157 @@
+@use "../base/variables" as *;
+@use "../base/mixsins" as *;
+ 
+  body {
+    font-family: $font-family;
+    margin: 0;
+    padding: 0;
+    background-color: $color-light;
+    color: $color-dark;
+  }
+  
+  .pagina__contenido {
+    @include flex-column-center;
+    padding: 20px;
+  }
+  
+  .compra {
+    width: 100%;
+    max-width: 600px;
+    border: 1px solid $border-color;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: $border-radius;
+    background-color: $color-light;
+  
+    &__info {
+      text-align: center;
+    }
+  
+    &__logo {
+      width: 120px;
+      margin-bottom: 10px;
+    }
+  
+    &__titulo {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 0;
+    }
+  
+    &__sala {
+      font-size: 14px;
+      margin-top: 5px;
+      color: $color-helper;
+    }
+  
+    &__separador {
+      border: none;
+      border-top: 1px solid $border-color;
+      margin: 20px 0;
+    }
+  
+    &__entradas {
+      text-align: center;
+    }
+  
+    &__subtitulo {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+  
+    &__instruccion {
+      font-size: 14px;
+      color: $color-helper;
+      margin-bottom: 20px;
+    }
+  
+    &__control {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+  
+    &__precio {
+      font-size: 16px;
+      font-weight: bold;
+    }
+  
+    &__precio-valor {
+      font-size: 16px;
+      color: $color-dark;
+    }
+  
+    &__cantidad {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  
+    &__boton-menos,
+    &__boton-mas {
+      background-color: $color-primary;
+      color: $color-light;
+      border: none;
+      padding: 10px;
+      font-size: 18px;
+      border-radius: $border-radius;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+      &:hover {
+        background-color: darken($color-primary, 20%);
+      }
+    }
+  
+    &__input {
+      width: 50px;
+      text-align: center;
+      font-size: 16px;
+      border: 1px solid $border-color;
+      border-radius: $border-radius;
+      padding: 5px;
+    }
+  
+    &__acciones {
+      display: flex;
+      justify-content: space-between;
+    }
+  
+    &__boton-volver,
+    &__boton-continuar {
+      background-color: $color-primary;
+      color: $color-light;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: $border-radius;
+      cursor: pointer;
+  
+      &:hover {
+        background-color: darken($color-primary, 20%);
+      }
+    }
+  
+    &__boton-volver {
+      background-color: $color-muted;
+  
+      &:hover {
+        background-color: darken($color-muted, 10%);
+      }
+    }
+  
+    &__boton-continuar {
+      background-color: $color-primary;
+  
+      &:hover {
+        background-color: darken($color-primary, 15%);
+      }
+    }
+  }
+  

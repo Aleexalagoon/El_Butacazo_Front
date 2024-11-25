@@ -1,0 +1,115 @@
+.pagina {
+  background-color: #fff;
+  color: #222;
+  padding: 20px;
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .pagina {
+    padding: 30px;
+  }
+}
+@media (min-width: 1024px) {
+  .pagina {
+    padding: 40px;
+  }
+}
+
+.pago {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin: 20px 0;
+}
+.pago__datos-operacion, .pago__tarjeta {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  width: 100%;
+  max-width: 400px;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .pago__datos-operacion, .pago__tarjeta {
+    width: 45%;
+  }
+}
+@media (min-width: 1024px) {
+  .pago__datos-operacion, .pago__tarjeta {
+    width: 45%;
+  }
+}
+.pago__titulo {
+  font-size: 18px;
+  font-weight: bold;
+  color: #00c4ff;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+@media (min-width: 768px) {
+  .pago__titulo {
+    font-size: 22px;
+  }
+}
+@media (min-width: 1024px) {
+  .pago__titulo {
+    font-size: 24px;
+  }
+}
+.pago__dato {
+  margin-bottom: 10px;
+  color: #222;
+}
+.pago__dato .pago__etiqueta {
+  font-weight: bold;
+}
+.pago__logos {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.pago__logos img {
+  height: 30px;
+}
+.pago__formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.pago__formulario .pago__label {
+  font-weight: bold;
+  color: #222;
+}
+.pago__formulario .pago__input {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+}
+.pago__formulario .pago__input:focus {
+  border-color: #00c4ff;
+  outline: none;
+}
+.pago__formulario .pago__botones {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.pago__formulario .pago__botones .pago__boton {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #222;
+}
+.pago__formulario .pago__botones .pago__boton:hover {
+  background-color: #00c4ff;
+  color: #fff;
+}
+
+/*# sourceMappingURL=Pago.css.map */

@@ -1,0 +1,116 @@
+@use "../base/variables" as *;
+@use "../base/mixsins" as *;
+  
+  
+  .login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; 
+    padding: 20px;
+  
+    &_titulo {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: $color-primary;
+      text-align: center;
+    }
+  
+    &_formulario {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 400px;
+      gap: 20px;
+  
+      .login_label {
+        font-size: 14px;
+        font-weight: bold;
+        color: $color-dark;
+      }
+  
+      .login_input {
+        border: 1px solid $border-color;
+        border-radius: $border-radius;
+        padding: 10px;
+        width: 100%;
+        font-size: 14px;
+  
+        &:focus {
+          border-color: $color-primary;
+          outline: none;
+        }
+      }
+    }
+  
+    &_opciones {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+  
+      .login__checkbox-label {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 14px;
+  
+        .login__checkbox {
+          accent-color: $color-primary;
+          cursor: pointer;
+        }
+      }
+  
+      .login__boton {
+        background-color: $color-primary;
+        color: $color-light;
+        font-weight: bold;
+        padding: 10px 20px;
+        border: none;
+        border-radius: $border-radius;
+        width: 100%;
+        cursor: pointer;
+        text-align: center;
+  
+        &:hover {
+          background-color: darken($color-primary, 10%);
+        }
+      }
+  
+      .login__texto {
+        font-size: 14px;
+        text-align: center;
+  
+        .login__enlace {
+          color: $color-primary;
+          text-decoration: none;
+  
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+  
+  @include responsive {
+    .login {
+      &_titulo {
+        font-size: 28px;
+      }
+  
+      &_formulario {
+        gap: 25px;
+      }
+  
+      &_opciones {
+        .login__boton {
+          width: auto;
+          max-width: 200px;
+        }
+      }
+    }
+  }
+  
