@@ -1,0 +1,52 @@
+
+@use "../base/variables" as *;
+@use "../base/mixsins" as *;
+
+
+
+.pagina {
+    @include pagina-contenido;
+}
+
+
+.condiciones-compra {
+    @include flex-column-center; 
+    max-width: $max-width-mobile;
+    margin: 0 auto;
+
+    @media (min-width: $max-width-tablet) {
+        max-width: $max-width-tablet;
+    }
+
+    &__titulo {
+        font-size: 1.8rem;
+        color: $color-primary;
+        margin-bottom: 1.5rem;
+
+        @include responsive(font-size, 1.8rem, 2rem, 2.2rem);
+    }
+
+    &__articulo {
+        margin-bottom: 1.5rem;
+        padding: 10px;
+        border: 1px solid $border-color;
+        border-radius: $border-radius;
+        background-color: $color-light;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+        &__subtitulo {
+            font-size: 1.4rem;
+            color: $color-muted;
+            margin-bottom: 0.8rem;
+
+            @include responsive(font-size, 1.4rem, 1.6rem, 1.8rem);
+        }
+
+        &__texto {
+            font-size: 1rem;
+            color: $color-helper;
+
+            @include responsive(font-size, 1rem, 1.2rem, 1.4rem);
+        }
+    }
+}
