@@ -1,0 +1,239 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #222;
+}
+
+.contenedor {
+  padding: 20px;
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .contenedor {
+    padding: 30px;
+  }
+}
+@media (min-width: 1024px) {
+  .contenedor {
+    padding: 40px;
+  }
+}
+.contenedor .barra-navegacion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+}
+.contenedor .barra-navegacion__boton {
+  background-color: #00c4ff;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.contenedor .barra-navegacion__boton:hover {
+  background-color: #00c4ff;
+}
+.contenedor .barra-navegacion__boton--volver {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  .contenedor .barra-navegacion__boton--volver {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1024px) {
+  .contenedor .barra-navegacion__boton--volver {
+    font-size: 18px;
+  }
+}
+.contenedor .barra-navegacion__boton--continuar {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  .contenedor .barra-navegacion__boton--continuar {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1024px) {
+  .contenedor .barra-navegacion__boton--continuar {
+    font-size: 18px;
+  }
+}
+
+.asientos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+.asientos__filas {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-gap: 10px;
+  width: 100%;
+  max-width: 500px;
+  grid-gap: 10px;
+  max-width: 500px;
+}
+@media (min-width: 768px) {
+  .asientos__filas {
+    grid-gap: 15px;
+  }
+}
+@media (min-width: 1024px) {
+  .asientos__filas {
+    grid-gap: 20px;
+  }
+}
+@media (min-width: 768px) {
+  .asientos__filas {
+    max-width: 900px;
+  }
+}
+@media (min-width: 1024px) {
+  .asientos__filas {
+    max-width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .asientos__filas {
+    max-width: 900px;
+  }
+}
+.asientos .asiento {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 100%;
+  height: auto;
+}
+.asientos .asiento img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+.asientos .asiento--libre img {
+  filter: brightness(1);
+}
+.asientos .asiento--ocupado img {
+  filter: grayscale(100%);
+}
+.asientos .asiento--seleccionado img {
+  border: 2px solid #00c4ff;
+}
+.asientos .asiento--reservado img {
+  opacity: 0.6;
+}
+.asientos .asiento--especial img {
+  border: 2px solid green;
+}
+.asientos__pantalla {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #ccc;
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+  max-width: 500px;
+  padding: 10px;
+}
+@media (min-width: 768px) {
+  .asientos__pantalla {
+    max-width: 900px;
+  }
+}
+@media (min-width: 1024px) {
+  .asientos__pantalla {
+    max-width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .asientos__pantalla {
+    padding: 15px;
+  }
+}
+@media (min-width: 1024px) {
+  .asientos__pantalla {
+    padding: 20px;
+  }
+}
+
+.leyenda {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+.leyenda__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.leyenda__item .leyenda__asiento {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 5px;
+  display: block;
+}
+.leyenda__item .leyenda__asiento--libre {
+  background-color: #00c4ff;
+}
+.leyenda__item .leyenda__asiento--seleccionado {
+  background-color: #00c4ff;
+}
+.leyenda__item .leyenda__asiento--especial {
+  background-color: green;
+}
+.leyenda__item .leyenda__asiento--reservado {
+  background-color: orange;
+}
+.leyenda__item .leyenda__asiento--ocupado {
+  background-color: #666;
+}
+.leyenda__item .leyenda__texto {
+  font-size: 12px;
+  font-size: 12px;
+}
+@media (min-width: 768px) {
+  .leyenda__item .leyenda__texto {
+    font-size: 14px;
+  }
+}
+@media (min-width: 1024px) {
+  .leyenda__item .leyenda__texto {
+    font-size: 16px;
+  }
+}
+
+.pie {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #ccc;
+  text-align: center;
+}
+.pie__copyright {
+  color: #555;
+  font-size: 12px;
+  font-size: 12px;
+}
+@media (min-width: 768px) {
+  .pie__copyright {
+    font-size: 14px;
+  }
+}
+@media (min-width: 1024px) {
+  .pie__copyright {
+    font-size: 16px;
+  }
+}
+
+/*# sourceMappingURL=Putacas.css.map */
