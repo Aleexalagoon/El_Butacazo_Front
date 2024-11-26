@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 peliculaElement.addEventListener('click', () => {
                   
-                    window.location.href = `detallePelicula.html?id=${pelicula.id}`;
+                    window.location.href = `../HTML/DetallesPelículas.html?id=${pelicula.id}`;
                 });
 
                 gridContainer.appendChild(peliculaElement);
