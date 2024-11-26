@@ -27,26 +27,64 @@ function mostrarSesion(sesion) {
         <p>Hora: ${sesion.hora}</p>
     `;
     mostrarPutacas(sesion.putacas);
+    mostrarPantalla();
 }
+
+// Mostrar la pantalla del cine
+// Función para mostrar la pantalla del cine
+function mostrarPantalla() {
+    const leyendaSection = document.querySelector('.leyenda');
+    if (leyendaSection) {
+        const pantalla = document.createElement('div');
+        pantalla.className = 'pantalla-cine';
+        pantalla.innerText = 'PANTALLA';
+        pantalla.style.textAlign = 'center';
+        pantalla.style.marginBottom = '40px';
+        pantalla.style.marginTop = '40px';
+        pantalla.style.fontWeight = 'bold';
+        pantalla.style.fontSize = '1.5rem';
+        pantalla.style.backgroundColor = '#d3d3d3'; 
+        pantalla.style.height = '30px';
+        pantalla.style.display = 'flex';
+        pantalla.style.justifyContent = 'center';
+        pantalla.style.alignItems = 'center';
+        pantalla.style.borderRadius = '5px';
+        leyendaSection.parentNode.insertBefore(pantalla, leyendaSection);
+    }
+}
+  
 
 // Función para mostrar las butacas como imágenes
 function mostrarPutacas(putacas) {
     const container = document.getElementById('putacas-container');
     container.innerHTML = ''; // Limpiar el contenedor
-
+ 
     putacas.forEach(putaca => {
         const img = document.createElement('img');
         img.setAttribute('data-putaca-id', putaca.id); // Configurar ID de la butaca
 
         if (putaca.estado) {
+<<<<<<< HEAD
             img.src = '../img/ocupado.PNG';
+=======
+            img.src = '../img/ocupado.png'; // Imagen para butaca ocupada
+>>>>>>> bf7a698be2bda672778871d719e337e0ec835eb5
             img.alt = 'Putaca Ocupada';
             img.className = 'putaca-ocupada';
+            img.style.width = '50%';
+            img.style.height = 'auto';
         } else {
             img.src = '../img/putaca.PNG';
             img.alt = 'Putaca Libre';
             img.className = 'putaca-libre';
+<<<<<<< HEAD
             img.addEventListener('click', () => seleccionarPutaca(img));
+=======
+            img.style.width = '50%';
+            img.style.height = 'auto';
+            img.dataset.putacaId = putaca.id
+            img.addEventListener('click', seleccionarPutaca); // Evento para seleccionar la butaca
+>>>>>>> bf7a698be2bda672778871d719e337e0ec835eb5
         }
 
         container.appendChild(img);
@@ -57,7 +95,8 @@ function mostrarPutacas(putacas) {
 let putacasSeleccionadas = [];
 
 // Función para seleccionar una butaca
-function seleccionarPutaca(img) {
+function seleccionarPutaca(event) {
+    const img = event.target;
     const putacaId = img.getAttribute('data-putaca-id');
     if (putacasSeleccionadas.includes(putacaId)) {
         putacasSeleccionadas = putacasSeleccionadas.filter(id => id !== putacaId);
@@ -74,7 +113,7 @@ document.getElementById('reservar-btn').addEventListener('click', reservarPutaca
 async function reservarPutacas() {
     const sesionId = 1; // Reemplazar con el ID real dinámicamente si es posible
     try {
-        const response = await fetch(`https://localhost:7053/api/sesiones/${sesionId}/putacas`, {
+        const response = await fetch(`https://localhost:7053/api/sesiones/${sesionId}/butacas`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

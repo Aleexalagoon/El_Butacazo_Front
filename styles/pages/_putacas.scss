@@ -44,21 +44,41 @@ body {
     }
   }
   
+  .contenedor-centrado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    max-width: $max-width-tablet; // Puedes ajustar el ancho máximo según tu diseño
+
+    #sesion-info {
+        margin-bottom: 20px;
+    }
+
+    #reservar-btn {
+        margin-top: 20px;
+    }
+}
 
   .asientos {
     @include flex-column-center;
     margin-top: 20px;
-  
+
     &__filas {
       display: grid;
-      grid-template-columns: repeat(10, 1fr);
-      grid-gap: 10px;
-      width: 100%;
-      max-width: $max-width-mobile;
-  
+      grid-template-columns: repeat(10, auto); // Ajustar el número de columnas según sea necesario
+      grid-gap: 15px; // Ajustar el espaciado entre butacas
+      justify-content: center; // Asegura que la cuadrícula se centre horizontalmente
+      align-items: center; // Alinea las butacas verticalmente dentro del contenedor
+      width: auto; // Ajustar el ancho automáticamente
+      margin: 0 auto; // Centrar el contenedor en la pantalla
+
       @include responsive(grid-gap, 10px, 15px, 20px);
       @include responsive(max-width, $max-width-mobile, $max-width-tablet, 100%);
-  
+
       @media (min-width: 768px) {
         max-width: $max-width-tablet;
       }

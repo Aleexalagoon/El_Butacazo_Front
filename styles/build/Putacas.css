@@ -66,6 +66,23 @@ body {
   }
 }
 
+.contenedor-centrado {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 900px;
+}
+.contenedor-centrado #sesion-info {
+  margin-bottom: 20px;
+}
+.contenedor-centrado #reservar-btn {
+  margin-top: 20px;
+}
+
 .asientos {
   display: flex;
   flex-direction: column;
@@ -74,10 +91,12 @@ body {
 }
 .asientos__filas {
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  grid-gap: 10px;
-  width: 100%;
-  max-width: 500px;
+  grid-template-columns: repeat(10, auto);
+  grid-gap: 15px;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  margin: 0 auto;
   grid-gap: 10px;
   max-width: 500px;
 }
