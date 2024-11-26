@@ -26,26 +26,55 @@ function mostrarSesion(sesion) {
         <p>Hora: ${sesion.hora}</p>
     `;
     mostrarPutacas(sesion.putacas);
+    mostrarPantalla();
 }
+
+// Mostrar la pantalla del cine
+// Función para mostrar la pantalla del cine
+function mostrarPantalla() {
+    const leyendaSection = document.querySelector('.leyenda');
+    if (leyendaSection) {
+        const pantalla = document.createElement('div');
+        pantalla.className = 'pantalla-cine';
+        pantalla.innerText = 'PANTALLA';
+        pantalla.style.textAlign = 'center';
+        pantalla.style.marginBottom = '40px';
+        pantalla.style.marginTop = '40px';
+        pantalla.style.fontWeight = 'bold';
+        pantalla.style.fontSize = '1.5rem';
+        pantalla.style.backgroundColor = '#d3d3d3'; 
+        pantalla.style.height = '30px';
+        pantalla.style.display = 'flex';
+        pantalla.style.justifyContent = 'center';
+        pantalla.style.alignItems = 'center';
+        pantalla.style.borderRadius = '5px';
+        leyendaSection.parentNode.insertBefore(pantalla, leyendaSection);
+    }
+}
+  
 
 // Función para mostrar las butacas como imágenes
 function mostrarPutacas(putacas) {
     const container = document.getElementById('putacas-container');
     container.innerHTML = ''; // Limpiar el contenedor
-
+ 
     putacas.forEach(putaca => {
         // Crear un elemento de imagen para cada butaca
         const img = document.createElement('img');
 
         // Configurar la imagen según el estado de la butaca
         if (putaca.estado) {
-            img.src = '../img/ocupado.PNG'; // Imagen para butaca ocupada
+            img.src = '../img/ocupado.png'; // Imagen para butaca ocupada
             img.alt = 'Putaca Ocupada';
             img.className = 'putaca-ocupada';
+            img.style.width = '50%';
+            img.style.height = 'auto';
         } else {
             img.src = '../img/putaca.PNG'; // Imagen para butaca libre
             img.alt = 'Putaca Libre';
             img.className = 'putaca-libre';
+            img.style.width = '50%';
+            img.style.height = 'auto';
             img.dataset.putacaId = putaca.id
             img.addEventListener('click', seleccionarPutaca); // Evento para seleccionar la butaca
         }
