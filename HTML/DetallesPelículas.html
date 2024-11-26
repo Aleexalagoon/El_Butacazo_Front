@@ -3,67 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Detalles de la Película - El Butacazo</title>
     <link rel="stylesheet" href="../styles/build/DetallesPeliculas.css">
-    <link rel="stylesheet" href="../styles/layout/_header.scss">
-    <link rel="stylesheet" href="../styles/layout/_footer.scss">
-    <link rel="icon" type="image" href="/img/logo.png">
+    <link rel="stylesheet" href="../styles/build/Header.css">
+    <link rel="stylesheet" href="../styles/build/Footer.css">
+    <link rel="icon" type="image/png" href="../img/logo.png">
 </head>
 <body class="pagina">
 
     <header class="header">
         <div class="header__top">
-            <img src="../img/logo2.png" alt="logo el butacazo" class="header__logo">
+            <img src="../img/logo2.png" alt="Logo El Butacazo" class="header__logo">
             <h1 class="header__title">EL BUTACAZO</h1>
         </div>
-        <div>
-            <nav class="header__nav">
-                <img src="../img/calendario.png" alt="logos enlace" class="header__logo__enlaces">
-                <a href="#" class="header__enlace">Próximos Estrenos</a>
-                <img src="../img/carrete-de-pelicula.png" alt="logos enlace" class="header__logo__enlaces">
-                <a href="#" class="header__enlace">Cartelera</a>
-                <img src="../img/libro.png" alt="logos enlace" class="header__logo__enlaces">
-                <a href="#" class="header__enlace">Nuestra Historia</a>
-            </nav>
-        </div>
+        <nav class="header__nav">
+            <img src="../img/calendario.png" alt="Próximos Estrenos" class="header__logo__enlaces">
+            <a href="#" class="header__enlace">Próximos Estrenos</a>
+            <img src="../img/carrete-de-pelicula.png" alt="Cartelera" class="header__logo__enlaces">
+            <a href="#" class="header__enlace">Cartelera</a>
+            <img src="../img/libro.png" alt="Nuestra Historia" class="header__logo__enlaces">
+            <a href="#" class="header__enlace">Nuestra Historia</a>
+        </nav>
     </header>
-    
 
     <main class="pagina__contenido">
         <section class="pelicula">
-            <h1 class="pelicula__titulo">aaaaaaaaaaaaaaaaa</h1>
+            <h1 id="peliculaTitulo" class="pelicula__titulo"></h1>
 
             <div class="pelicula__detalle">
-                <img src="../img/logo.png" alt="..." class="pelicula__poster">
-                
+                <img id="peliculaImagen" src="" alt="Poster de la película" class="pelicula__poster">
+
                 <div class="pelicula__informacion-video">
                     <div class="pelicula__informacion">
-                        <p class="pelicula__campo"><strong>Título original:</strong> aaaaaaaaaaaaaaaaaaaaaaa </p>
-                        <p class="pelicula__campo"><strong>Género:</strong> aaaaaaaaaaaaaaaaaaaaaaa </p>
-                        <p class="pelicula__campo"><strong>Director:</strong> aaaaaaaaaaaaaaaaaaaaaaa </p>
-                        <p class="pelicula__campo"><strong>Reparto:</strong> aaaaaaaaaaaaaaaaaaaaaaa </p>
-                        <p class="pelicula__campo"><strong>Estreno:</strong> aaaaaaaaaaaaaaaaaaaaaaa </p>
-                        <p class="pelicula__campo"><strong>Duración:</strong> aaaaaaaaaaaaaaaaaaaaaaa </p>
-                        <p class="pelicula__campo"><strong>Calificación:</strong> aaaaaaaaaaaaaaaaaaaaaaa </p>
-                        
-                        <button class="pelicula__boton">comprar entradas</button>
+                        <p class="pelicula__campo"><strong>Título original:</strong> <span id="peliculaTituloOriginal"></span></p>
+                        <p class="pelicula__campo"><strong>Género:</strong> <span id="peliculaGenero"></span></p>
+                        <p class="pelicula__campo"><strong>Director:</strong> <span id="peliculaDirector"></span></p>
+                        <p class="pelicula__campo"><strong>Reparto:</strong> <span id="peliculaReparto"></span></p>
+                        <p class="pelicula__campo"><strong>Estreno:</strong> <span id="peliculaEstreno"></span></p>
+                        <p class="pelicula__campo"><strong>Duración:</strong> <span id="peliculaDuracion"></span></p>
+                        <p class="pelicula__campo"><strong>Calificación:</strong> <span id="peliculaCalificacion"></span></p>
+
+                        <button class="pelicula__boton">Comprar Entradas</button>
                     </div>
-            
+
                     <div class="pelicula__trailer">
-                        <iframe class="pelicula__video" src="https://www.youtube.com/embed/tu_video_trailer" title="Trailer" frameborder="0" allowfullscreen></iframe>
+                        <iframe id="peliculaTrailer" class="pelicula__video" src="" title="Trailer" frameborder="0" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
             <div class="pelicula__sinopsis">
-                <p class="pelicula__sinopsis-texto">
-                    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                </p>
+                <p id="peliculaSinopsis" class="pelicula__sinopsis-texto"></p>
             </div>
-
-            
         </section>
     </main>
 
@@ -75,7 +65,7 @@
             <a href="#" class="footer__enlace">Política de cookies</a>
         </div>
         <div class="footer__patrocinadores">
-            <img src="" alt="" class="footer__imagen">
+            <img src="../img/patrocinador.png" alt="Patrocinador" class="footer__imagen">
         </div>
         <p class="footer__copyright">
             &copy; 2004 - 2024 EL BUTACAZO 33, S.L. Todos los derechos reservados /
@@ -83,5 +73,6 @@
         </p>
     </footer>
 
+    <script src="../JS/DetallePelicula.js"></script>
 </body>
 </html>
