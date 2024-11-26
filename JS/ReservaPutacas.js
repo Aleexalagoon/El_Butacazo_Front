@@ -46,7 +46,8 @@ function mostrarPutacas(putacas) {
             img.src = '../img/putaca.PNG'; // Imagen para butaca libre
             img.alt = 'Putaca Libre';
             img.className = 'putaca-libre';
-            img.onclick = () => seleccionarPutaca(putaca.id); // Evento para seleccionar la butaca
+            img.dataset.putacaId = putaca.id
+            img.addEventListener('click', seleccionarPutaca); // Evento para seleccionar la butaca
         }
 
         // Añadir la imagen al contenedor
@@ -58,7 +59,8 @@ function mostrarPutacas(putacas) {
 let putacasSeleccionadas = [];
 
 // Función para seleccionar una butaca
-function seleccionarPutaca(img) {
+function seleccionarPutaca(event) {
+    const img = event.target;
     const putacaId = img.getAttribute('data-putaca-id');
     if (putacasSeleccionadas.includes(putacaId)) {
         // Si la butaca ya está seleccionada, deseleccionarla
@@ -77,7 +79,7 @@ document.getElementById('reservar-btn').addEventListener('click', reservarPutaca
 async function reservarPutacas() {
     const sesionId = 1; // Reemplazar con el ID real de la sesión seleccionada
     try {
-        const response = await fetch(`https://localhost:7053/api/sesiones/${sesionId}/putacas`, {
+        const response = await fetch(`https://localhost:7053/api/sesiones/${sesionId}/butacas`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
