@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Obtener el parámetro `id` de la URL
     const urlParams = new URLSearchParams(window.location.search);
     const peliculaId = parseInt(urlParams.get("id"));
+    localStorage.setItem('prueba', peliculaId)
 
     // Validar si el `id` es válido
     if (!peliculaId || isNaN(peliculaId)) {

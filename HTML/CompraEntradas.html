@@ -7,57 +7,59 @@
     <link rel="stylesheet" href="../styles/build/CompraEntradas.css">
     <link rel="stylesheet" href="../styles/layout/_header.scss">
     <link rel="stylesheet" href="../styles/layout/_footer.scss">
-    <link rel="icon" type="image" href="/img/logo.png">
+    <link rel="icon" type="image/png" href="../img/logo.png">
 </head>
 <body class="pagina">
 
     <header class="header">
         <div class="header__top">
-            <img src="../img/logo2.png" alt="logo el butacazo" class="header__logo">
+            <img src="../img/logo2.png" alt="Logo El Butacazo" class="header__logo">
             <h1 class="header__title">EL BUTACAZO</h1>
         </div>
-        <div>
-            <nav class="header__nav">
-                <img src="../img/calendario.png" alt="logos enlace" class="header__logo__enlaces">
-                <a href="#" class="header__enlace">Películas</a>
-                <img src="../img/carrete-de-pelicula.png" alt="logos enlace" class="header__logo__enlaces">
-                <a href="#" class="header__enlace">Elige Cine</a>
-                <img src="../img/libro.png" alt="logos enlace" class="header__logo__enlaces">
-                <a href="#" class="header__enlace">Comprueba Tu Compra</a>
-                <a href="#" class="header__enlace--secundario">Iniciar Sesión</a>
-                <a href="#" class="header__enlace--secundario">Registrarse</a>
-            </nav>
-        </div>
+        <nav class="header__nav">
+            <img src="../img/calendario.png" alt="Ícono Películas" class="header__logo__enlaces">
+            <a href="#" class="header__enlace">Películas</a>
+            <img src="../img/carrete-de-pelicula.png" alt="Ícono Cines" class="header__logo__enlaces">
+            <a href="#" class="header__enlace">Elige Cine</a>
+            <img src="../img/libro.png" alt="Ícono Compras" class="header__logo__enlaces">
+            <a href="#" class="header__enlace">Comprueba Tu Compra</a>
+            <a href="#" class="header__enlace--secundario">Iniciar Sesión</a>
+            <a href="#" class="header__enlace--secundario">Registrarse</a>
+        </nav>
     </header>
 
     <main class="pagina__contenido">
         <section class="compra">
+            <!-- Información de la Película -->
             <div class="compra__info">
                 <img src="../img/logo2.png" alt="Logo El Butacazo" class="compra__logo">
-                <h2 class="compra__titulo">dfsdfsd</h2>
-                <p class="compra__sala">sdfsdf</p>
+                <h2 id="compraTitulo" class="compra__titulo">Cargando...</h2>
+                <p id="compraSala" class="compra__sala">Cargando sala...</p>
             </div>
 
             <hr class="compra__separador">
 
+            <!-- Selección de Entradas -->
             <div class="compra__entradas">
-                <h3 class="compra__subtitulo">SUS ENTRADAS</h3>
-                <p class="compra__instruccion">Elija precio y número de entradas, máximo de 10 entradas por compra</p>
+                <h3 class="compra__subtitulo">Selecciona tus Entradas</h3>
+                <p class="compra__instruccion">Elige la cantidad de entradas (máximo 10).</p>
 
+                <!-- Controles de cantidad -->
                 <div class="compra__control">
-                    <label class="compra__precio">Entradas</label>
-                    <span class="compra__precio-valor">3,50€</span>
+                    <label for="compraCantidad" class="compra__precio">Entradas:</label>
+                    <span id="compraPrecio" class="compra__precio-valor">Cargando...</span>
 
                     <div class="compra__cantidad">
-                        <button class="compra__boton-menos">−</button>
-                        <input type="number" value="0" min="0" max="10" class="compra__input">
-                        <button class="compra__boton-mas">+</button>
+                        <button id="botonMenos" class="compra__boton-menos" type="button">−</button>
+                        <input id="compraCantidad" type="number" value="0" min="0" max="10" class="compra__input">
+                        <button id="botonMas" class="compra__boton-mas" type="button">+</button>
                     </div>
                 </div>
 
+                <!-- Botones de acción -->
                 <div class="compra__acciones">
-                    <button class="compra__boton-volver">← Volver</button>
-                    <button class="compra__boton-continuar">Continuar →</button>
+                    <button id="botonVolver" class="compra__boton-volver" type="button">← Volver</button>
+                    <button href="../HTML/Putacas.html" id="botonContinuar" class="compra__boton-continuar" type="button">Continuar →</button>
                 </div>
             </div>
         </section>
@@ -71,13 +73,14 @@
             <a href="#" class="footer__enlace">Política de cookies</a>
         </div>
         <div class="footer__patrocinadores">
-            <img src="" alt="" class="footer__imagen">
+            <img src="../img/patrocinador.png" alt="Patrocinador" class="footer__imagen">
         </div>
         <p class="footer__copyright">
-            &copy; 2004 - 2024 EL BUTACAZO 33, S.L. Todos los derechos reservados /
-            Contacto: admin@elbutacazo.com
+            &copy; 2004 - 2024 EL BUTACAZO 33, S.L. Todos los derechos reservados / Contacto: admin@elbutacazo.com
         </p>
     </footer>
 
+    <!-- Conexión al script de JavaScript -->
+    <script src="../JS/compra.js"></script>
 </body>
 </html>
