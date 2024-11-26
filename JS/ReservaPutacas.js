@@ -1,6 +1,7 @@
+
 document.addEventListener('DOMContentLoaded', () => {
-    const sesionId = 1; // Reemplazar con el ID real dinámicamente si es posible
-    cargarSesion(sesionId);
+    // Función para cargar una sesión específica y mostrar sus butacas
+    cargarSesion(1); // Reemplazar con el ID real de la sesión seleccionada
 });
 
 // Función para cargar una sesión específica y mostrar sus butacas
@@ -14,7 +15,6 @@ async function cargarSesion(sesionId) {
         mostrarSesion(sesion);
     } catch (error) {
         console.error('Error:', error);
-        alert('Hubo un error al cargar la sesión.');
     }
 }
 
@@ -23,7 +23,7 @@ function mostrarSesion(sesion) {
     const sesionInfo = document.getElementById('sesion-info');
     sesionInfo.innerHTML = `
         <h2>${sesion.pelicula.nombre}</h2>
-        <p>Fecha: ${new Date(sesion.fecha).toLocaleDateString()}</p>
+        <p>Fecha: ${new Date().toLocaleDateString()}</p>
         <p>Hora: ${sesion.hora}</p>
     `;
     mostrarPutacas(sesion.putacas);
@@ -60,33 +60,27 @@ function mostrarPutacas(putacas) {
     container.innerHTML = ''; // Limpiar el contenedor
  
     putacas.forEach(putaca => {
+        // Crear un elemento de imagen para cada butaca
         const img = document.createElement('img');
-        img.setAttribute('data-putaca-id', putaca.id); // Configurar ID de la butaca
 
+        // Configurar la imagen según el estado de la butaca
         if (putaca.estado) {
-<<<<<<< HEAD
-            img.src = '../img/ocupado.PNG';
-=======
             img.src = '../img/ocupado.png'; // Imagen para butaca ocupada
->>>>>>> bf7a698be2bda672778871d719e337e0ec835eb5
             img.alt = 'Putaca Ocupada';
             img.className = 'putaca-ocupada';
             img.style.width = '50%';
             img.style.height = 'auto';
         } else {
-            img.src = '../img/putaca.PNG';
+            img.src = '../img/putaca.PNG'; // Imagen para butaca libre
             img.alt = 'Putaca Libre';
             img.className = 'putaca-libre';
-<<<<<<< HEAD
-            img.addEventListener('click', () => seleccionarPutaca(img));
-=======
             img.style.width = '50%';
             img.style.height = 'auto';
             img.dataset.putacaId = putaca.id
             img.addEventListener('click', seleccionarPutaca); // Evento para seleccionar la butaca
->>>>>>> bf7a698be2bda672778871d719e337e0ec835eb5
         }
 
+        // Añadir la imagen al contenedor
         container.appendChild(img);
     });
 }
@@ -99,11 +93,13 @@ function seleccionarPutaca(event) {
     const img = event.target;
     const putacaId = img.getAttribute('data-putaca-id');
     if (putacasSeleccionadas.includes(putacaId)) {
+        // Si la butaca ya está seleccionada, deseleccionarla
         putacasSeleccionadas = putacasSeleccionadas.filter(id => id !== putacaId);
-        img.style.border = 'none';
+        img.style.border = 'none'; // Quitar el borde de selección
     } else {
+        // Si la butaca no está seleccionada, seleccionarla
         putacasSeleccionadas.push(putacaId);
-        img.style.border = '3px solid orange';
+        img.style.border = '3px solid orange'; // Añadir un borde para indicar selección
     }
 }
 
@@ -111,7 +107,7 @@ function seleccionarPutaca(event) {
 document.getElementById('reservar-btn').addEventListener('click', reservarPutacas);
 
 async function reservarPutacas() {
-    const sesionId = 1; // Reemplazar con el ID real dinámicamente si es posible
+    const sesionId = 1; // Reemplazar con el ID real de la sesión seleccionada
     try {
         const response = await fetch(`https://localhost:7053/api/sesiones/${sesionId}/butacas`, {
             method: 'PUT',
@@ -121,12 +117,12 @@ async function reservarPutacas() {
             body: JSON.stringify(putacasSeleccionadas),
         });
         if (!response.ok) {
-            throw new Error('Error al reservar las butacas');
+            throw new Error('Error al reservar las putacas');
         }
         alert('Putacas reservadas con éxito');
-        cargarSesion(sesionId); // Recargar la sesión
+        // Recargar la sesión para mostrar las butacas actualizadas
+        cargarSesion(sesionId);
     } catch (error) {
         console.error('Error:', error);
-        alert('Hubo un error al reservar las butacas.');
     }
 }
