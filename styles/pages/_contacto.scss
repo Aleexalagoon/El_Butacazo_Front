@@ -1,129 +1,128 @@
 @use "../base/variables" as *;
-@use "../base/mixsins" as *;
+@use "../base/mixins" as *;
 
 .contacto {
+  background-color: $color-light;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  @include pagina-contenido;
+  max-width: $max-width-mobile;
+  margin: 2rem auto;
+  padding: 2rem;
+
+  &__titulo {
+    font-size: 1.8rem;
     text-align: center;
-  
-    &__titulo {
-      font-size: 2rem;
-      color: $color-dark;
-      margin-bottom: 20px;
-    }
-  
-    &__texto {
-      font-size: 1rem;
-      color: $color-muted;
-      margin-bottom: 15px;
-      line-height: 1.8;
-    }
-  
-    &__subtitulo {
-      font-size: 1.5rem;
-      color: $color-primary;
-      margin: 20px 0;
-    }
+    color: $color-primary;
+    margin-bottom: 1.5rem;
+
+    @include responsive(font-size, 1.8rem, 2rem, 2.2rem);
   }
 
-  .contacto__titulo {
-    @include responsive(font-size, 1rem, 1.5rem, 2rem);
-  }
-  
+  &__subtitulo {
+    font-size: 1.5rem;
+    color: $color-primary;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
 
-  .formulario-contacto {
-    max-width: 400px;
-    margin: 0 auto;
+    @include responsive(font-size, 1.5rem, 1.7rem, 1.9rem);
+  }
+
+  &__texto {
+    font-size: 1rem;
+    color: $color-dark;
+    margin-bottom: 1rem;
+
+    @include responsive(font-size, 1rem, 1.125rem, 1.25rem);
+
+    a {
+      color: $color-secondary;
+      text-decoration: underline;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+}
+
+.formulario-contacto {
+  margin-top: 2rem;
+
+  &__campos,
+  &__campo {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-  
-    &__campo {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-  
-      &__label {
-        font-size: 1rem;
-        color: $color-dark;
-      }
-  
-      &__input {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid $border-color;
-        border-radius: $border-radius;
-        font-size: 1rem;
-        color: $color-dark;
-  
-        &:focus {
-          outline: none;
-          border-color: $color-primary;
-        }
-      }
-    }
-  
-    &__aceptacion {
-      display: flex;
-      align-items: center;
-      font-size: 0.9rem;
-      color: $color-helper;
-  
-      &__checkbox {
-        margin-right: 5px;
-      }
-  
-      &__texto {
-        font-size: 0.9rem;
-  
-        .formulario-contacto__enlace {
-          color: $color-primary;
-          text-decoration: none;
-  
-          &:hover {
-            text-decoration: underline;
-          }
-        }
-      }
-    }
-  
-    &__boton {
-      width: 100%;
-      background-color: $color-primary;
-      color: $color-light;
-      font-size: 1rem;
-      font-weight: bold;
-      border: none;
-      padding: 10px 15px;
-      border-radius: $border-radius;
-      cursor: pointer;
-      transition: background-color 0.3s;
-  
-      &:hover {
-        background-color: $color-primary-hover;
-      }
-    }
-  }
-  
+    margin-bottom: 1rem;
 
- 
-  
-  @media (min-width: 768px) {
-    .contacto {
-      &__titulo {
-        font-size: 2.5rem;
-      }
-  
-      &__subtitulo {
-        font-size: 2rem;
-      }
+    @include responsive(margin-bottom, 1rem, 1.25rem, 1.5rem);
+  }
+
+  &__label {
+    font-size: 1rem;
+    color: $color-primary;
+    margin-bottom: 0.5rem;
+
+    @include responsive(font-size, 1rem, 1.125rem, 1.25rem);
+  }
+
+  &__input {
+    font-size: 1rem;
+    padding: 0.5rem;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    color: $color-dark;
+
+    &:focus {
+      outline: none;
+      border-color: $color-primary;
+      box-shadow: 0 0 4px $color-primary;
     }
-  
-    .formulario-contacto {
-      max-width: 600px;
-  
-      &__boton {
-        max-width: 200px;
-        margin: 0 auto;
+  }
+
+  &__checkbox {
+    margin-right: 0.5rem;
+  }
+
+  &__texto {
+    font-size: 0.9rem;
+    color: $color-dark;
+
+    a {
+      color: $color-secondary;
+      text-decoration: underline;
+
+      &:hover {
+        color: $color-primary;
       }
     }
   }
-  
+
+  &__aceptacion {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    @include responsive(margin-bottom, 1rem, 1.25rem, 1.5rem);
+  }
+
+  &__boton {
+    font-size: 1rem;
+    background-color: $color-primary;
+    color: $color-light;
+    border: none;
+    border-radius: $border-radius;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $color-secondary;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 4px $color-primary;
+    }
+  }
+}

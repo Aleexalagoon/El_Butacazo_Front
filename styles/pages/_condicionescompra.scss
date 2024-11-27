@@ -1,52 +1,49 @@
-
 @use "../base/variables" as *;
-@use "../base/mixsins" as *;
-
-
-
-.pagina {
-    @include pagina-contenido;
-}
-
+@use "../base/mixins" as *;
 
 .condiciones-compra {
-    @include flex-column-center; 
-    max-width: $max-width-mobile;
-    margin: 0 auto;
+  background-color: $color-light;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  @include pagina-contenido;
+  max-width: $max-width-mobile;
+  margin: 1rem auto;
+  padding: 2rem;
 
-    @media (min-width: $max-width-tablet) {
-        max-width: $max-width-tablet;
+  @include responsive(max-width, $max-width-mobile, $max-width-tablet, 800px);
+
+  &__titulo {
+    font-size: 1.8rem;
+    text-align: center;
+    color: $color-primary;
+    margin-bottom: 1.5rem;
+
+    @include responsive(font-size, 1.8rem, 2rem, 2.2rem);
+  }
+
+  &__articulo {
+    margin-bottom: 1.5rem;
+  }
+
+  &__subtitulo {
+    font-size: 1.3rem;
+    color: $color-primary;
+    margin-bottom: 1rem;
+
+    @include responsive(font-size, 1.3rem, 1.5rem, 1.7rem);
+  }
+
+  &__texto {
+    font-size: 1rem;
+    color: $color-dark;
+    margin-bottom: 1rem;
+
+    @include responsive(font-size, 1rem, 1.125rem, 1.25rem);
+
+    br {
+      margin-bottom: 0.5rem;
+      display: block;
     }
-
-    &__titulo {
-        font-size: 1.8rem;
-        color: $color-primary;
-        margin-bottom: 1.5rem;
-
-        @include responsive(font-size, 1.8rem, 2rem, 2.2rem);
-    }
-
-    &__articulo {
-        margin-bottom: 1.5rem;
-        padding: 10px;
-        border: 1px solid $border-color;
-        border-radius: $border-radius;
-        background-color: $color-light;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
-        &__subtitulo {
-            font-size: 1.4rem;
-            color: $color-muted;
-            margin-bottom: 0.8rem;
-
-            @include responsive(font-size, 1.4rem, 1.6rem, 1.8rem);
-        }
-
-        &__texto {
-            font-size: 1rem;
-            color: $color-helper;
-
-            @include responsive(font-size, 1rem, 1.2rem, 1.4rem);
-        }
-    }
+  }
 }
+
