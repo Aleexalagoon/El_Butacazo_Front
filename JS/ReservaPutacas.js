@@ -1,8 +1,32 @@
-
 document.addEventListener('DOMContentLoaded', () => {
-    // Función para cargar una sesión específica y mostrar sus butacas
-    cargarSesion(1); // Reemplazar con el ID real de la sesión seleccionada
+    // Obtener parámetros de la URL (sesión ID y cantidad de entradas)
+    const params = new URLSearchParams(window.location.search);
+    const sesionId = parseInt(params.get('id'), 10);
+    const cantidadEntradas = parseInt(params.get('cantidad'), 10) || 0;
+
+    if (cantidadEntradas > 0) {
+        actualizarNumeroEntradas(cantidadEntradas);
+        cargarSesion(sesionId); // Carga la sesión y muestra las butacas
+    } else {
+        alert("Error: Número de entradas no válido.");
+        window.location.href = "index.html";
+    }
 });
+
+// Lista para almacenar las butacas seleccionadas por el usuario
+let putacasSeleccionadas = [];
+
+// Número de entradas compradas por el usuario
+let numeroEntradas = 1;
+
+// Función para actualizar el número de entradas seleccionadas
+function actualizarNumeroEntradas(nuevasEntradas) {
+    numeroEntradas = nuevasEntradas;
+    putacasSeleccionadas = []; // Reinicia las selecciones
+    const imgs = document.querySelectorAll('.putaca-libre');
+    imgs.forEach(img => (img.style.border = 'none')); // Limpia los estilos
+    console.log(`Número de entradas actualizado: ${numeroEntradas}`);
+}
 
 // Función para cargar una sesión específica y mostrar sus butacas
 async function cargarSesion(sesionId) {
@@ -30,7 +54,6 @@ function mostrarSesion(sesion) {
     mostrarPantalla();
 }
 
-// Mostrar la pantalla del cine
 // Función para mostrar la pantalla del cine
 function mostrarPantalla() {
     const leyendaSection = document.querySelector('.leyenda');
@@ -43,7 +66,7 @@ function mostrarPantalla() {
         pantalla.style.marginTop = '40px';
         pantalla.style.fontWeight = 'bold';
         pantalla.style.fontSize = '1.5rem';
-        pantalla.style.backgroundColor = '#d3d3d3'; 
+        pantalla.style.backgroundColor = '#d3d3d3';
         pantalla.style.height = '30px';
         pantalla.style.display = 'flex';
         pantalla.style.justifyContent = 'center';
@@ -52,76 +75,72 @@ function mostrarPantalla() {
         leyendaSection.parentNode.insertBefore(pantalla, leyendaSection);
     }
 }
-  
 
 // Función para mostrar las butacas como imágenes
 function mostrarPutacas(putacas) {
     const container = document.getElementById('putacas-container');
-    container.innerHTML = ''; // Limpiar el contenedor
- 
-    putacas.forEach(putaca => {
-        // Crear un elemento de imagen para cada butaca
-        const img = document.createElement('img');
+    container.innerHTML = ''; // Limpia el contenedor
 
-        // Configurar la imagen según el estado de la butaca
+    putacas.forEach(putaca => {
+        const img = document.createElement('img');
         if (putaca.estado) {
             img.src = '../img/ocupado.png'; // Imagen para butaca ocupada
-            img.alt = 'Putaca Ocupada';
-            img.className = 'putaca-ocupada';
+            img.alt = 'Butaca Ocupada';
+            img.className = 'butaca-ocupada';
             img.style.width = '50%';
             img.style.height = 'auto';
         } else {
             img.src = '../img/putaca.PNG'; // Imagen para butaca libre
-            img.alt = 'Putaca Libre';
-            img.className = 'putaca-libre';
+            img.alt = 'Butaca Libre';
+            img.className = 'butaca-libre';
             img.style.width = '50%';
             img.style.height = 'auto';
-            img.dataset.putacaId = putaca.id
-            img.addEventListener('click', seleccionarPutaca); // Evento para seleccionar la butaca
+            img.dataset.putacaId = putaca.id;
+            img.addEventListener('click', seleccionarPutaca); // Evento de selección
         }
-
-        // Añadir la imagen al contenedor
         container.appendChild(img);
     });
 }
-
-// Lista para almacenar las butacas seleccionadas por el usuario
-let putacasSeleccionadas = [];
 
 // Función para seleccionar una butaca
 function seleccionarPutaca(event) {
     const img = event.target;
     const putacaId = img.getAttribute('data-putaca-id');
-    if (putacasSeleccionadas.includes(putacaId)) {
-        // Si la butaca ya está seleccionada, deseleccionarla
-        putacasSeleccionadas = putacasSeleccionadas.filter(id => id !== putacaId);
-        img.style.border = 'none'; // Quitar el borde de selección
-    } else {
-        // Si la butaca no está seleccionada, seleccionarla
-        putacasSeleccionadas.push(putacaId);
-        img.style.border = '3px solid orange'; // Añadir un borde para indicar selección
+
+    if (!putacasSeleccionadas.includes(putacaId) && putacasSeleccionadas.length >= numeroEntradas) {
+        alert(`Solo puedes seleccionar ${numeroEntradas} putaca(s).`);
+        return;
     }
+
+    if (putacasSeleccionadas.includes(putacaId)) {
+        putacasSeleccionadas = putacasSeleccionadas.filter(id => id !== putacaId);
+        img.style.border = 'none';
+    } else {
+        putacasSeleccionadas.push(putacaId);
+        img.style.border = '3px solid orange';
+    }
+
+    console.log('Putacas seleccionadas:', putacasSeleccionadas);
 }
 
 // Función para reservar las butacas seleccionadas
 document.getElementById('reservar-btn').addEventListener('click', reservarPutacas);
 
 async function reservarPutacas() {
-    const sesionId = 1; // Reemplazar con el ID real de la sesión seleccionada
+    const params = new URLSearchParams(window.location.search);
+    const sesionId = parseInt(params.get('id'), 10);
+
     try {
         const response = await fetch(`https://localhost:7053/api/sesiones/${sesionId}/butacas`, {
             method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(putacasSeleccionadas),
         });
         if (!response.ok) {
-            throw new Error('Error al reservar las putacas');
+            throw new Error('Error al reservar las butacas');
         }
         alert('Putacas reservadas con éxito');
-        // Recargar la sesión para mostrar las butacas actualizadas
-        cargarSesion(sesionId);
+        cargarSesion(sesionId); // Recarga las putacas
     } catch (error) {
         console.error('Error:', error);
     }
