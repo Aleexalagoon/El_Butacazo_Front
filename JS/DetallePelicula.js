@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Elementos del DOM
     const peliculaImagen = document.getElementById("peliculaImagen");
+    const peliculaDescipcion = document.getElementById("peliculaDescripcion")
     const peliculaGenero = document.getElementById("peliculaGenero");
     const peliculaDirector = document.getElementById("peliculaDirector");
     const peliculaDuracion = document.getElementById("peliculaDuracion");
@@ -40,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Actualizar elementos del DOM con los datos de la película
             peliculaImagen.src = pelicula.imagen || "../img/default-poster.png";
+            peliculaDescipcion.textContent = pelicula.descripcion || "Descripcion no disponible";
             peliculaTitulo.textContent = pelicula.titulo || "Título no disponible";
             peliculaGenero.textContent = pelicula.genero || "Género no disponible";
             peliculaDirector.textContent = pelicula.director || "Director no disponible";
