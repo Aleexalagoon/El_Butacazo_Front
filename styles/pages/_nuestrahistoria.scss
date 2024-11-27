@@ -1,13 +1,20 @@
 @use "../base/variables" as *;
 @use "../base/mixsins" as *;
 
-.pagina {
-  font-family: $font-family;
-  background-color: $color-light;
-  color: $color-dark;
+
+html, body {
+  height: 100%;
   margin: 0;
+  padding: 0;
 }
- 
+.pagina {
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column;
+}
+.principal {
+  flex: 1; 
+}
   .principal {
     @include responsive(padding, 20px, 30px, 40px);
   }

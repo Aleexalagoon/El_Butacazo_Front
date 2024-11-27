@@ -1,8 +1,17 @@
-.pagina {
-  font-family: Arial, sans-serif;
-  background-color: #fff;
-  color: #222;
+html, body {
+  height: 100%;
   margin: 0;
+  padding: 0;
+}
+
+.pagina {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.principal {
+  flex: 1;
 }
 
 .principal {
