@@ -79,6 +79,7 @@
     width: 100%;
     max-width: 250px;
     text-align: center;
+    text-decoration: none;
   
     &:hover {
       background-color: darken($color-primary, 10%);
