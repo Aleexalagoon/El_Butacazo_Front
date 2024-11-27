@@ -64,14 +64,14 @@
   padding: 10px;
   font-size: 1rem;
   color: #fff;
-  background-color: #007bff;
+  background-color: #00c4ff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   text-align: center;
 }
 .registro__boton:hover {
-  background-color: #0056b3;
+  background-color: #00c4ff;
 }
 @media (min-width: 768px) {
   .registro__boton {
@@ -104,19 +104,32 @@
   width: 100%;
 }
 .campo__entrada:focus {
-  border-color: #007bff;
+  border-color: #00c4ff;
   outline: none;
   box-shadow: 0 0 2px rgba(0, 123, 255, 0.5);
 }
+.campo__entrada .principal {
+  width: 100%;
+  max-width: 500px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 0 auto;
+}
 @media (min-width: 768px) {
-  .campo__entrada {
-    width: 65%;
+  .campo__entrada .principal {
+    max-width: 900px;
+    padding: 40px;
   }
 }
-.campo__ayuda {
-  font-size: 0.8rem;
-  color: #666;
-  margin-top: 5px;
+@media (min-width: 1024px) {
+  .campo__entrada .principal {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    height: 100vh;
+    transform: translateX(50px);
+  }
 }
 
 /*# sourceMappingURL=Register.css.map */
