@@ -138,14 +138,6 @@
       }
     }
   
-    &__boton-volver {
-      background-color: $color-muted;
-  
-      &:hover {
-        background-color: darken($color-muted, 10%);
-      }
-    }
-  
     &__boton-continuar {
       background-color: $color-primary;
   
