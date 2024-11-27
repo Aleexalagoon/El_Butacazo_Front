@@ -1,0 +1,68 @@
+@use "../base/variables" as *;
+@use "../base/mixsins" as *;
+
+.buscador {
+    text-align: center;
+    margin: 20px 0;
+
+    &__titulo {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        color: $color-dark;
+    }
+
+    &__input {
+        width: 80%;
+        max-width: 500px;
+        padding: 10px;
+        border: 1px solid $border-color;
+        border-radius: $border-radius;
+        font-size: 1em;
+
+        &:focus {
+            outline: none;
+            border-color: $color-primary;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+    }
+}
+
+// Lista de Películas
+.peliculas {
+    &__lista {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 0px;
+        padding: 0px;
+        justify-content: center;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .pelicula {
+        text-align: center;
+        background-color: $color-light;
+        border-radius: $border-radius;
+        padding: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+
+        &:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        &__imagen {
+            width: 350px; 
+            height: 500px; 
+            object-fit: cover; 
+            border-radius: $border-radius;
+        }
+
+        &__titulo {
+            margin-top: 10px;
+            font-size: 1.2em;
+            color: $color-dark;
+        }
+    }
+}
