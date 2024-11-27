@@ -1,7 +1,14 @@
 @use "../base/variables" as *;
 @use "../base/mixsins" as *;
 
-// Banner
+
+.pagina {
+    font-family: $font-family;
+    background-color: $color-light;
+    color: $color-dark;
+    margin: 0;
+  }
+
 .banner {
   position: relative;
   width: 100%;
