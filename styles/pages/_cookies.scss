@@ -1,6 +1,13 @@
 @use "../base/variables" as *;
 @use "../base/mixsins" as *;
 
+
+.pagina {
+  font-family: $font-family;
+  background-color: $color-light;
+  color: $color-dark;
+  margin: 0;
+}
 // Política de Cookies
 .politica-cookies {
   @include pagina-contenido;

@@ -1,6 +1,23 @@
 @use "../base/variables" as *;
 @use "../base/mixsins" as *;
 
+
+html, body {
+    height: 100%;
+  }
+  
+  .pagina {
+    font-family: $font-family;
+    background-color: $color-light;
+    color: $color-dark;
+    margin: 0;
+  }
+  
+  .pagina__contenido {
+    flex: 1;
+  }
+
+
 .buscador {
     text-align: center;
     margin: 20px 0;
