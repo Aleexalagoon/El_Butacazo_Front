@@ -1,84 +1,33 @@
-.pagina {
+.condiciones-compra {
   padding: 20px;
   padding: 20px;
 }
 @media (min-width: 768px) {
-  .pagina {
+  .condiciones-compra {
     padding: 30px;
   }
 }
 @media (min-width: 1024px) {
-  .pagina {
+  .condiciones-compra {
     padding: 40px;
   }
 }
-
-.condiciones-compra {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 500px;
-  margin: 0 auto;
-}
-@media (min-width: 900px) {
-  .condiciones-compra {
-    max-width: 900px;
-  }
-}
 .condiciones-compra__titulo {
-  font-size: 1.8rem;
-  color: #00c4ff;
-  margin-bottom: 1.5rem;
-  font-size: 1.8rem;
-}
-@media (min-width: 768px) {
-  .condiciones-compra__titulo {
-    font-size: 2rem;
-  }
-}
-@media (min-width: 1024px) {
-  .condiciones-compra__titulo {
-    font-size: 2.2rem;
-  }
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #222;
 }
 .condiciones-compra__articulo {
-  margin-bottom: 1.5rem;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
 }
 .condiciones-compra__articulo__subtitulo {
-  font-size: 1.4rem;
-  color: #555;
-  margin-bottom: 0.8rem;
-  font-size: 1.4rem;
-}
-@media (min-width: 768px) {
-  .condiciones-compra__articulo__subtitulo {
-    font-size: 1.6rem;
-  }
-}
-@media (min-width: 1024px) {
-  .condiciones-compra__articulo__subtitulo {
-    font-size: 1.8rem;
-  }
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #00c4ff;
 }
 .condiciones-compra__articulo__texto {
-  font-size: 1rem;
-  color: #666;
-  font-size: 1rem;
-}
-@media (min-width: 768px) {
-  .condiciones-compra__articulo__texto {
-    font-size: 1.2rem;
-  }
-}
-@media (min-width: 1024px) {
-  .condiciones-compra__articulo__texto {
-    font-size: 1.4rem;
-  }
+  line-height: 1.6;
+  color: #555;
 }
 
 /*# sourceMappingURL=CondicionesCompra.css.map */

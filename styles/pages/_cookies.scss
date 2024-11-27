@@ -1,55 +1,41 @@
 @use "../base/variables" as *;
 @use "../base/mixsins" as *;
 
+// Política de Cookies
 .politica-cookies {
-    background-color: $color-light;
-    border: 1px solid $border-color;
-    border-radius: $border-radius;
-    @include pagina-contenido;
-    max-width: $max-width-mobile;
-    margin: 1rem auto;
-  
-    @include responsive(max-width, $max-width-mobile, $max-width-tablet, 800px);
-  }
-  
-  .politica-cookies__titulo {
-    font-size: 1.8rem;
+  @include pagina-contenido;
+
+  &__titulo {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: $color-dark;
     text-align: center;
-    color: $color-primary;
-    margin-bottom: 1.5rem;
-  
-    @include responsive(font-size, 1.8rem, 2rem, 2.2rem);
   }
-  
-  .politica-cookies__articulo {
-    margin-bottom: 1.5rem;
+
+  &__articulo {
+    margin-bottom: 30px;
+
+    &__subtitulo {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+      color: $color-primary;
+    }
+
+    &__texto {
+      line-height: $line-height;
+      color: $color-muted;
+      margin-bottom: 15px;
+    }
+
+    &__lista {
+      margin-left: 20px;
+      list-style-type: disc;
+
+      &__item {
+        margin-bottom: 10px;
+        line-height: $line-height;
+        color: $color-helper;
+      }
+    }
   }
-  
-  .politica-cookies__subtitulo {
-    font-size: 1.3rem;
-    color: $color-primary;
-    margin-bottom: 1rem;
-  
-    @include responsive(font-size, 1.3rem, 1.5rem, 1.7rem);
-  }
-  
-  .politica-cookies__texto {
-    font-size: 1rem;
-    color: $color-dark;
-    margin-bottom: 1rem;
-  
-    @include responsive(font-size, 1rem, 1.125rem, 1.25rem);
-  }
-  
-  .politica-cookies__lista {
-    list-style-type: disc;
-    margin-left: 1.5rem;
-  }
-  
-  .politica-cookies__item {
-    font-size: 1rem;
-    color: $color-dark;
-    margin-bottom: 0.5rem;
-  
-    @include responsive(font-size, 1rem, 1.125rem, 1.25rem);
-  }
+}

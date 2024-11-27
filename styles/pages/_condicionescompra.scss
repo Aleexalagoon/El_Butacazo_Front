@@ -1,48 +1,27 @@
 @use "../base/variables" as *;
-@use "../base/mixins" as *;
+@use "../base/mixsins" as *;
 
 .condiciones-compra {
-  background-color: $color-light;
-  border: 1px solid $border-color;
-  border-radius: $border-radius;
   @include pagina-contenido;
-  max-width: $max-width-mobile;
-  margin: 1rem auto;
-  padding: 2rem;
-
-  @include responsive(max-width, $max-width-mobile, $max-width-tablet, 800px);
 
   &__titulo {
-    font-size: 1.8rem;
-    text-align: center;
-    color: $color-primary;
-    margin-bottom: 1.5rem;
-
-    @include responsive(font-size, 1.8rem, 2rem, 2.2rem);
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: $color-dark;
   }
 
   &__articulo {
-    margin-bottom: 1.5rem;
-  }
+    margin-bottom: 20px;
 
-  &__subtitulo {
-    font-size: 1.3rem;
-    color: $color-primary;
-    margin-bottom: 1rem;
+    &__subtitulo {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+      color: $color-primary;
+    }
 
-    @include responsive(font-size, 1.3rem, 1.5rem, 1.7rem);
-  }
-
-  &__texto {
-    font-size: 1rem;
-    color: $color-dark;
-    margin-bottom: 1rem;
-
-    @include responsive(font-size, 1rem, 1.125rem, 1.25rem);
-
-    br {
-      margin-bottom: 0.5rem;
-      display: block;
+    &__texto {
+      line-height: $line-height;
+      color: $color-muted;
     }
   }
 }
