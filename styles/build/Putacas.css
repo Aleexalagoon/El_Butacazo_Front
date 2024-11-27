@@ -178,12 +178,6 @@ body {
 .asientos .asiento--seleccionado img {
   border: 2px solid #00c4ff;
 }
-.asientos .asiento--reservado img {
-  opacity: 0.6;
-}
-.asientos .asiento--especial img {
-  border: 2px solid green;
-}
 .asientos__pantalla {
   margin-top: 20px;
   padding: 10px;
@@ -238,13 +232,8 @@ body {
   background-color: #00c4ff;
 }
 .leyenda__item .leyenda__asiento--seleccionado {
-  background-color: #00c4ff;
-}
-.leyenda__item .leyenda__asiento--especial {
-  background-color: green;
-}
-.leyenda__item .leyenda__asiento--reservado {
-  background-color: orange;
+  background-color: white;
+  border: 2px solid orange;
 }
 .leyenda__item .leyenda__asiento--ocupado {
   background-color: #666;

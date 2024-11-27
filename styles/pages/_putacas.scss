@@ -158,17 +158,6 @@ body {
         }
       }
   
-      &--reservado {
-        img {
-          opacity: 0.6;
-        }
-      }
-  
-      &--especial {
-        img {
-          border: 2px solid green;
-        }
-      }
     }
   
     &__pantalla {
@@ -207,15 +196,8 @@ body {
         }
   
         &--seleccionado {
-          background-color: $color-primary-hover;
-        }
-  
-        &--especial {
-          background-color: green;
-        }
-  
-        &--reservado {
-          background-color: orange;
+          background-color: white;
+          border: 2px solid orange;
         }
   
         &--ocupado {
