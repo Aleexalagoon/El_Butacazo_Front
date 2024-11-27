@@ -1,13 +1,24 @@
 @use "../base/variables" as *;
 @use "../base/mixsins" as *;
 
-  .pagina {
-    background-color: $color-light;
-    color: $color-dark;
-  
-    @include pagina-contenido;
-  }
-  
+html, body {
+  height: 100%; 
+  margin: 0;
+  padding: 0;
+}
+
+
+.pagina {
+  display: flex;
+  flex-direction: column; 
+  min-height: 100vh; 
+}
+
+
+.principal {
+  flex: 1; 
+}
+
   
   .pago {
     display: flex;

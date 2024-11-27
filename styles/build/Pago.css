@@ -1,18 +1,17 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 .pagina {
-  background-color: #fff;
-  color: #222;
-  padding: 20px;
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
-@media (min-width: 768px) {
-  .pagina {
-    padding: 30px;
-  }
-}
-@media (min-width: 1024px) {
-  .pagina {
-    padding: 40px;
-  }
+
+.principal {
+  flex: 1;
 }
 
 .pago {
