@@ -66,6 +66,37 @@ body {
   }
 }
 
+.botones-navegacion {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  padding: 0 20px;
+}
+
+.boton-navegacion {
+  background-color: #00c4ff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.boton-navegacion:hover {
+  background-color: #009ec1;
+}
+
+.boton-navegacion--volver {
+  align-self: flex-start;
+}
+
+.boton-navegacion--continuar {
+  align-self: flex-end;
+}
+
 .contenedor-centrado {
   display: flex;
   flex-direction: column;
