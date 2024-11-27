@@ -3,9 +3,10 @@ html, body {
 }
 
 .pagina {
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #222;
+  margin: 0;
 }
 
 .pagina__contenido {

@@ -1,3 +1,9 @@
+.pagina {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #222;
+  margin: 0;
+}
 .pagina__contenido {
   padding: 20px;
   padding: 20px;
@@ -53,7 +59,7 @@
 .pelicula__detalle__informacion__boton {
   margin-top: 15px;
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: #00c4ff;
   border: none;
   border-radius: 5px;
   color: #fff;
@@ -61,7 +67,7 @@
   cursor: pointer;
 }
 .pelicula__detalle__informacion__boton:hover {
-  background-color: #0056b3;
+  background-color: #00c4ff;
 }
 .pelicula__detalle__trailer__video {
   width: 100%;
