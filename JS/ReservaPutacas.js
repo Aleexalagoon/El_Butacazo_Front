@@ -89,6 +89,7 @@ function mostrarPutacas(putacas) {
             img.className = 'butaca-ocupada';
             img.style.width = '50%';
             img.style.height = 'auto';
+            img.style.cursor = 'not-allowed'; // Cambiar cursor para indicar que no es seleccionable
         } else {
             img.src = '../img/putaca.PNG'; // Imagen para butaca libre
             img.alt = 'Butaca Libre';
