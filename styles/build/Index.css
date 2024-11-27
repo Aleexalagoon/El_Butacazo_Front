@@ -1,0 +1,57 @@
+.buscador {
+  text-align: center;
+  margin: 20px 0;
+}
+.buscador__titulo {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #222;
+}
+.buscador__input {
+  width: 80%;
+  max-width: 500px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+}
+.buscador__input:focus {
+  outline: none;
+  border-color: #00c4ff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.peliculas__lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0px;
+  padding: 0px;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.peliculas .pelicula {
+  text-align: center;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.peliculas .pelicula:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+.peliculas .pelicula__imagen {
+  width: 350px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.peliculas .pelicula__titulo {
+  margin-top: 10px;
+  font-size: 1.2em;
+  color: #222;
+}
+
+/*# sourceMappingURL=Index.css.map */
