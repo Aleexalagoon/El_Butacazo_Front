@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>El Butacazo - Selección de Asientos</title>
+    <title>Selección de Asientos</title>
     <link rel="stylesheet" href="../styles/build/Putacas.css">
     <link rel="stylesheet" href="../styles/build/DetallesPeliculas.css">
     <link rel="stylesheet" href="../styles/build/Header.css">
     <link rel="stylesheet" href="../styles/build/Footer.css">
     <link rel="icon" type="image/png" href="../img/logo.png">
 </head>
+
 <body class="pagina">
+
 
     <header class="header">
         <div class="header__top">
-            <img src="../img/logo2.png" alt="Logo El Butacazo" class="header__logo">
+            <img src="../img/logo2.png" alt="logo el butacazo" class="header__logo">
             <h1 class="header__title">EL BUTACAZO</h1>
         </div>
-        <nav class="header__nav">
-            <img src="../img/calendario.png" alt="Próximos Estrenos" class="header__logo__enlaces">
-            <a href="#" class="header__enlace">Próximos Estrenos</a>
-            <img src="../img/carrete-de-pelicula.png" alt="Cartelera" class="header__logo__enlaces">
-            <a href="#" class="header__enlace">Cartelera</a>
-            <img src="../img/libro.png" alt="Nuestra Historia" class="header__logo__enlaces">
-            <a href="#" class="header__enlace">Nuestra Historia</a>
-        </nav>
-    </header>
+        <div>
+            <nav class="header__nav">
+                <img src="../img/calendario.png" alt="logos enlace" class="header__logo__enlaces">
+                <a href="#" class="header__enlace">Próximos Estrenos</a>
+                <img src="../img/carrete-de-pelicula.png" alt="logos enlace" class="header__logo__enlaces">
+                <a href="#" class="header__enlace">Cartelera</a>
+                <img src="../img/libro.png" alt="logos enlace" class="header__logo__enlaces">
+                <a href="#" class="header__enlace">Nuestra Historia</a>
+            </nav>
+        </div>
+    </header>>
 
     <div class="botones-navegacion">
         <a href="../HTML/CompraEntradas.html" class="boton-navegacion boton-navegacion--volver">&larr; VOLVER</a>
@@ -35,9 +40,10 @@
     <main class="contenedor">
 
         <div class="contenedor-centrado">
-        <div id="sesion-info"></div>
-        <div id="putacas-container" class="asientos__filas"></div>
-        <button id="reservar-btn" class="barra-navegacion__boton barra-navegacion__boton--continuar">Reservar Putacas</button>
+            <div id="sesion-info"></div>
+            <div id="putacas-container" class="asientos__filas"></div>
+            <button id="reservar-btn" class="barra-navegacion__boton barra-navegacion__boton--continuar">Reservar
+                Putacas</button>
         </div>
 
         <section class="leyenda">
@@ -82,4 +88,5 @@
 
     <script src="../JS/ReservaPutacas.js"></script>
 </body>
+
 </html>

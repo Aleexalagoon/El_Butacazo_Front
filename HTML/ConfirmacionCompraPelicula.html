@@ -1,33 +1,40 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalles de Compra - El Butacazo</title>
-    <link rel="stylesheet" href="../styles/build/"> 
+    <link rel="stylesheet" href="../styles/build/">
     <link rel="stylesheet" href="../CSS/Header.css">
     <link rel="icon" type="image" href="/img/logo.png">
-    <link rel="stylesheet" href="../styles/build/ConfirmacionCompraPelicula.css">  
+    <link rel="stylesheet" href="../styles/build/ConfirmacionCompraPelicula.css">
     <link rel="stylesheet" href="../CSS/Header.css">
     <link rel="stylesheet" href="../styles/build/Footer.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    
+
+
     <header class="header">
-        <div class="header__elbutacazo">
-            <img src="logo.png" alt="logo el butacazo" class="header__logo">
-            <nav class="header__enlaces">
-                <a href="#" class="header__enlace">películas</a>
-                <a href="#" class="header__enlace">elige cine</a>
-                <a href="#" class="header__enlace">comprueba tu compra</a>
-                <a href="#" class="header__enlace--secundario">Iniciar Sesión</a>
-                <a href="#" class="header__enlace--secundario">Registrarse</a>
+        <div class="header__top">
+            <img src="../img/logo2.png" alt="logo el butacazo" class="header__logo">
+            <h1 class="header__title">EL BUTACAZO</h1>
+        </div>
+        <div>
+            <nav class="header__nav">
+                <img src="../img/calendario.png" alt="logos enlace" class="header__logo__enlaces">
+                <a href="#" class="header__enlace">Próximos Estrenos</a>
+                <img src="../img/carrete-de-pelicula.png" alt="logos enlace" class="header__logo__enlaces">
+                <a href="#" class="header__enlace">Cartelera</a>
+                <img src="../img/libro.png" alt="logos enlace" class="header__logo__enlaces">
+                <a href="#" class="header__enlace">Nuestra Historia</a>
             </nav>
         </div>
-    </header>
-    
-    
+    </header>>
+
+
     <main class="principal">
         <section class="compra">
             <h1 class="compra__titulo">Datos de su compra</h1>
@@ -37,10 +44,10 @@
             <button class="compra__botones">
                 Aceptar y Pagar →
             </button>
-            
+
             <div class="compra__detalles">
                 <img src="imagen-pelicula.jpg" alt="" class="detalles__imagen">
-                
+
                 <div class="detalles__informacion">
                     <p class="informacion__item"><strong>Película:</strong> Shin Chan</p>
                     <p class="informacion__item"><strong>Cine:</strong> El Butacazo</p>
@@ -55,7 +62,7 @@
                     <p class="informacion__item"><strong>Forma de pago:</strong> Tarjeta bancaria</p>
                 </div>
             </div>
-            
+
             <div class="compra__resumen">
                 <table class="resumen__tabla">
                     <thead class="tabla__encabezado">
@@ -77,40 +84,45 @@
                         </tr>
                     </tbody>
                 </table>
-                
+
                 <div class="resumen__detalles">
                     <p><strong>Suplemento de butaca:</strong></p>
                     <p><strong>Complementos opcionales:</strong></p>
                     <p><strong>Comida:</strong></p>
                     <p><strong>Total compra:</strong></p>
                 </div>
-                
+
                 <p class="resumen__nota">
-                    * Impuestos incluidos. El total incluye todos los costes de gestión que pudieran derivarse de la operación de compra.
+                    * Impuestos incluidos. El total incluye todos los costes de gestión que pudieran derivarse de la
+                    operación de compra.
                 </p>
             </div>
-            
+
         </section>
-        
+
         <section class="cliente">
             <h2 class="cliente__titulo">Datos del Cliente</h2>
             <form class="cliente__formulario" action="#" method="post">
                 <div class="formulario__campo">
                     <label for="email" class="campo__etiqueta">Email (Requerido)</label>
-                    <input type="email" id="email" name="email" class="campo__entrada" placeholder="Introduzca su email" required>
+                    <input type="email" id="email" name="email" class="campo__entrada" placeholder="Introduzca su email"
+                        required>
                 </div>
                 <div class="formulario__campo">
                     <label for="repetir-email" class="campo__etiqueta">Repita Email (Requerido)</label>
-                    <input type="email" id="repetir-email" name="repetir-email" class="campo__entrada" placeholder="Introduzca su email de nuevo" required>
+                    <input type="email" id="repetir-email" name="repetir-email" class="campo__entrada"
+                        placeholder="Introduzca su email de nuevo" required>
                 </div>
                 <div class="formulario__campo">
                     <label for="telefono" class="campo__etiqueta">Teléfono (Opcional)</label>
-                    <input type="tel" id="telefono" name="telefono" class="campo__entrada" placeholder="Introduzca su teléfono">
+                    <input type="tel" id="telefono" name="telefono" class="campo__entrada"
+                        placeholder="Introduzca su teléfono">
                 </div>
                 <div class="formulario__terminos">
                     <input type="checkbox" id="aceptar" name="aceptar" class="terminos__checkbox" required>
                     <label for="aceptar" class="terminos__etiqueta">
-                        Al pulsar Aceptar, acepto los Términos y condiciones y la Política de privacidad de comprentradas.com.
+                        Al pulsar Aceptar, acepto los Términos y condiciones y la Política de privacidad de
+                        comprentradas.com.
                     </label>
                 </div>
                 <div class="formulario__metodos-pago">
@@ -129,20 +141,21 @@
         </section>
 
 
-    <footer class="footer">
-        <div class="footer__elbutacazo">
-            <a href="#" class="footer__enlace">Contacto</a>
-            <a href="#" class="footer__enlace">Condiciones de compra</a>
-            <a href="#" class="footer__enlace">Política de privacidad</a>
-            <a href="#" class="footer__enlace">Política de cookies</a>
-        </div>
-        <div class="footer__patrocinadores">
-            <img src="patrocinador1.png" alt="Patrocinador 1" class="footer__imagen">
-            <img src="patrocinador2.png" alt="Patrocinador 2" class="footer__imagen">
-        </div>
-        <p class="footer__copyright">
-            &copy; 2004 - 2024 EL BUTACAZO 33, S.L. Todos los derechos reservados / Contacto: admin@elbutacazo.com
-        </p>
-    </footer>
+        <footer class="footer">
+            <div class="footer__elbutacazo">
+                <a href="#" class="footer__enlace">Contacto</a>
+                <a href="#" class="footer__enlace">Condiciones de compra</a>
+                <a href="#" class="footer__enlace">Política de privacidad</a>
+                <a href="#" class="footer__enlace">Política de cookies</a>
+            </div>
+            <div class="footer__patrocinadores">
+                <img src="patrocinador1.png" alt="Patrocinador 1" class="footer__imagen">
+                <img src="patrocinador2.png" alt="Patrocinador 2" class="footer__imagen">
+            </div>
+            <p class="footer__copyright">
+                &copy; 2004 - 2024 EL BUTACAZO 33, S.L. Todos los derechos reservados / Contacto: admin@elbutacazo.com
+            </p>
+        </footer>
 </body>
+
 </html>
