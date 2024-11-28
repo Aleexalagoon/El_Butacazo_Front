@@ -8,6 +8,7 @@ html, body {
   padding: 0;
 }
 .pagina {
+  font-family: $font-family;
   min-height: 100vh; 
   display: flex;
   flex-direction: column;

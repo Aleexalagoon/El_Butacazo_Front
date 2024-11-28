@@ -1,6 +1,5 @@
-@charset "UTF-8";
 .pagina {
-  font-family: Arial, sans-serif;
+  font-family: "Raleway", sans-serif;
   background-color: #fff;
   color: #222;
   margin: 0;
@@ -32,9 +31,9 @@
 }
 .cartelera .pelicula__portada {
   width: 100%;
-  height: 350px; /* Reduce la altura para que la imagen sea más compacta */
-  object-fit: cover; /* Asegura que la imagen mantenga sus proporciones */
-  object-position: center; /* Centra la imagen dentro del contenedor */
+  height: 350px;
+  object-fit: cover;
+  object-position: center;
 }
 .cartelera .pelicula__titulo {
   font-size: 1.2rem;
@@ -119,9 +118,9 @@
 .peliculas .pelicula__imagen {
   width: 100%;
   max-width: 250px;
-  height: 350px; /* Reduce la altura */
-  object-fit: cover; /* Asegura que la imagen mantenga sus proporciones */
-  object-position: center; /* Centra la imagen dentro del contenedor */
+  height: 350px;
+  object-fit: cover;
+  object-position: center;
   border-radius: 5px;
 }
 .peliculas .pelicula__titulo {
