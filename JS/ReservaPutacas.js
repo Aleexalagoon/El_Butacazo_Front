@@ -108,20 +108,24 @@ function seleccionarPutaca(event) {
     const img = event.target;
     const putacaId = img.getAttribute('data-putaca-id');
 
-    if (!putacasSeleccionadas.includes(putacaId) && putacasSeleccionadas.length >= numeroEntradas) {
-        alert(`Solo puedes seleccionar ${numeroEntradas} putaca(s).`);
-        return;
-    }
-
+    // Validar si la butaca ya está seleccionada
     if (putacasSeleccionadas.includes(putacaId)) {
+        // Desseleccionar butaca
         putacasSeleccionadas = putacasSeleccionadas.filter(id => id !== putacaId);
         img.style.border = 'none';
     } else {
+        // Validar si se ha alcanzado el límite de selecciones
+        if (putacasSeleccionadas.length >= numeroEntradas) {
+            alert(`Solo puedes seleccionar ${numeroEntradas} butaca(s).`);
+            return;
+        }
+
+        // Seleccionar butaca
         putacasSeleccionadas.push(putacaId);
         img.style.border = '3px solid orange';
     }
 
-    console.log('Putacas seleccionadas:', putacasSeleccionadas);
+    console.log('Butacas seleccionadas:', putacasSeleccionadas);
 }
 
 // Función para reservar las butacas seleccionadas
@@ -140,7 +144,7 @@ async function reservarPutacas() {
         if (!response.ok) {
             throw new Error('Error al reservar las butacas');
         }
-        alert('Putacas reservadas con éxito');
+        alert('Butacas reservadas con éxito');
         cargarSesion(sesionId); // Recarga las putacas
     } catch (error) {
         console.error('Error:', error);
