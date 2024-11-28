@@ -75,7 +75,7 @@ function mostrarPantalla() {
     }
 }
 
-// Función para mostrar las butacas como imagenes
+// Función para mostrar las butacas como imágenes
 function mostrarPutacas(putacas) {
     const container = document.getElementById('putacas-container');
     container.innerHTML = ''; 
@@ -109,19 +109,19 @@ function seleccionarPutaca(event) {
 
     // Validar si la butaca ya está seleccionada
     if (putacasSeleccionadas.includes(putacaId)) {
-        // Desseleccionar butaca
+        // Desseleccionar butaca: cambiar de nuevo a la imagen de butaca libre
         putacasSeleccionadas = putacasSeleccionadas.filter(id => id !== putacaId);
-        img.style.border = 'none';
+        img.src = '../img/putaca.PNG'; // <-- Cambio a la imagen de butaca libre
     } else {
-        // Si se ha alcanzado el límite de selecciones sale esto
+        // Si se ha alcanzado el límite de selecciones, mostrar un mensaje
         if (putacasSeleccionadas.length >= numeroEntradas) {
             alert(`Solo puedes seleccionar ${numeroEntradas} butaca(s).`);
             return;
         }
 
-        // Seleccionar butaca
+        // Seleccionar butaca: cambiar a la imagen de butaca seleccionada
         putacasSeleccionadas.push(putacaId);
-        img.style.border = '3px solid orange';
+        img.src = '../img/seleccionada.png'; // <-- Cambio a la imagen de butaca seleccionada
     }
 
     console.log('Butacas seleccionadas:', putacasSeleccionadas);
@@ -150,4 +150,3 @@ async function reservarPutacas() {
         alert('Problema al reservar las butacas');
     }
 }
-
