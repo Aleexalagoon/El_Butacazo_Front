@@ -46,7 +46,6 @@ async function cargarSesion(sesionId) {
 function mostrarSesion(sesion) {
     const sesionInfo = document.getElementById('sesion-info');
     sesionInfo.innerHTML = `
-        <h2>${sesion.pelicula.nombre}</h2>
         <p>Fecha: ${new Date().toLocaleDateString()}</p>
         <p>Hora: ${sesion.hora}</p>
     `;
@@ -76,28 +75,28 @@ function mostrarPantalla() {
     }
 }
 
-// Función para mostrar las butacas como imágenes
+// Función para mostrar las butacas como imagenes
 function mostrarPutacas(putacas) {
     const container = document.getElementById('putacas-container');
-    container.innerHTML = ''; // Limpia el contenedor
+    container.innerHTML = ''; 
 
     putacas.forEach(putaca => {
         const img = document.createElement('img');
         if (putaca.estado) {
-            img.src = '../img/ocupado.png'; // Imagen para butaca ocupada
+            img.src = '../img/ocupado.png'; 
             img.alt = 'Butaca Ocupada';
             img.className = 'butaca-ocupada';
             img.style.width = '50%';
             img.style.height = 'auto';
-            img.style.cursor = 'not-allowed'; // Cambiar cursor para indicar que no es seleccionable
+            img.style.cursor = 'not-allowed'; 
         } else {
-            img.src = '../img/putaca.PNG'; // Imagen para butaca libre
+            img.src = '../img/putaca.PNG'; 
             img.alt = 'Butaca Libre';
             img.className = 'butaca-libre';
             img.style.width = '50%';
             img.style.height = 'auto';
             img.dataset.putacaId = putaca.id;
-            img.addEventListener('click', seleccionarPutaca); // Evento de selección
+            img.addEventListener('click', seleccionarPutaca); 
         }
         container.appendChild(img);
     });
@@ -114,7 +113,7 @@ function seleccionarPutaca(event) {
         putacasSeleccionadas = putacasSeleccionadas.filter(id => id !== putacaId);
         img.style.border = 'none';
     } else {
-        // Validar si se ha alcanzado el límite de selecciones
+        // Si se ha alcanzado el límite de selecciones sale esto
         if (putacasSeleccionadas.length >= numeroEntradas) {
             alert(`Solo puedes seleccionar ${numeroEntradas} butaca(s).`);
             return;
@@ -128,7 +127,7 @@ function seleccionarPutaca(event) {
     console.log('Butacas seleccionadas:', putacasSeleccionadas);
 }
 
-// Función para reservar las butacas seleccionadas
+// Función para que se guarden las butacas seleccionadas
 document.getElementById('reservar-btn').addEventListener('click', reservarPutacas);
 
 async function reservarPutacas() {
@@ -145,10 +144,10 @@ async function reservarPutacas() {
             throw new Error('Error al reservar las butacas');
         }
         alert('Butacas reservadas con éxito');
-        window.location.href = '../HTML/ConfirmacionCompraPelicula.html'; 
+        window.location.href = '../HTML/ConfirmacionCompraPelicula.html';
     } catch (error) {
         console.error('Error:', error);
-        alert('Hubo un problema al reservar las butacas. Inténtalo de nuevo más tarde.');
+        alert('Problema al reservar las butacas');
     }
 }
 
