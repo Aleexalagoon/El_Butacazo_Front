@@ -1,93 +1,164 @@
 @use "../base/variables" as *;
 @use "../base/mixsins" as *;
 
-.pagina {
-    font-family: $font-family;
-    background-color: $color-light;
-    color: $color-dark;
-    margin: 0;
-    &__contenido {
-      @include pagina-contenido;
+.compra {
+  @include pagina-contenido;
+  background-color: $color-light;
+  color: $color-dark;
+
+  &__titulo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  &__botones {
+    background-color: $color-primary;
+    color: $color-light;
+    border: none;
+    border-radius: $border-radius;
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin: 10px 0;
+    cursor: pointer;
+    text-align: center;
+    display: block;
+    width: 100%;
+    max-width: 200px;
+
+    &:hover {
+      background-color: $color-primary-hover;
     }
   }
-  
-  .pelicula {
-    margin: 20px auto;
-    max-width: $max-width-tablet;
-  
-    &__titulo {
-      font-size: 2em;
-      text-align: center;
-      color: $color-dark;
-      margin-bottom: 20px;
+
+  &__detalles {
+    @include flex-column-center;
+    gap: 15px;
+
+    .detalles__imagen {
+      max-width: 100%;
+      border-radius: $border-radius;
     }
-  
-    &__detalle {
+
+    .detalles__informacion {
+      background-color: $color-muted;
+      padding: 15px;
+      border-radius: $border-radius;
+      text-align: left;
+      width: 100%;
+
+      .informacion__item {
+        font-size: 0.9rem;
+        margin-bottom: 5px;
+
+        strong {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  &__resumen {
+    margin-top: 20px;
+
+    .resumen__tabla {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 15px;
+
+      .tabla__encabezado {
+        background-color: $color-primary;
+        color: $color-light;
+      }
+
+      th, td {
+        border: 1px solid $border-color;
+        padding: 10px;
+        text-align: center;
+      }
+    }
+
+    .resumen__detalles {
+      text-align: right;
+      font-weight: bold;
+    }
+
+    .resumen__nota {
+      font-size: 0.8rem;
+      color: $color-helper;
+      margin-top: 10px;
+    }
+  }
+}
+
+.cliente {
+  @include pagina-contenido;
+
+  &__titulo {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  &__formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    .formulario__campo {
       display: flex;
       flex-direction: column;
-      gap: 20px;
-  
-      @media (min-width: 768px) {
-        flex-direction: row;
+
+      .campo__etiqueta {
+        margin-bottom: 5px;
+        font-weight: bold;
+        font-size: 0.9rem;
       }
-  
-      &__poster {
-        max-width: 300px;
+
+      .campo__entrada {
+        padding: 10px;
+        border: 1px solid $border-color;
         border-radius: $border-radius;
-      }
-  
-      &__informacion-video {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-      }
-  
-      &__informacion {
-        &__campo {
-          font-size: 1em;
-          color: $color-helper;
-  
-          strong {
-            color: $color-dark;
-          }
-        }
-  
-        &__boton {
-          margin-top: 15px;
-          padding: 10px 20px;
-          background-color: $color-primary;
-          border: none;
-          border-radius: $border-radius;
-          color: $color-light;
-          font-size: 1em;
-          cursor: pointer;
-  
-          &:hover {
-            background-color: $color-primary-hover;
-          }
-        }
-      }
-  
-      &__trailer {
-        &__video {
-          width: 100%;
-          border-radius: $border-radius;
-          border: 1px solid $border-color;
-        }
+        font-size: 1rem;
       }
     }
-  
-    &__sinopsis {
-      margin-top: 20px;
-  
-      &-texto {
-        font-size: 1em;
-        line-height: $line-height;
-        color: $color-muted;
+
+    .formulario__terminos {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      .terminos__checkbox {
+        cursor: pointer;
+      }
+
+      .terminos__etiqueta {
+        font-size: 0.8rem;
+        color: $color-helper;
+      }
+    }
+
+    .formulario__metodos-pago {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+
+      .metodos-pago__icono {
+        max-width: 50px;
+        max-height: 50px;
+      }
+    }
+
+    .compra__botones-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+
+      .compra__botones {
+        flex: 1;
       }
     }
   }
-  
-
-  
+}
