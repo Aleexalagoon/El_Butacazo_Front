@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalles de Compra</title>
     <link rel="icon" type="image" href="/img/logo.png">
-    <link rel="stylesheet" href="../styles/build/ConfirmacionCompraPelicula.css">
+    <link rel="stylesheet" href="../styles/build/ConfirmacionCompraPeliculas.css">
     <link rel="stylesheet" href="../styles/build/Header.css">
     <link rel="stylesheet" href="../styles/build/Footer.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -38,58 +38,52 @@
     <main class="principal">
         <section class="compra">
             <h1 class="compra__titulo">Datos de su compra</h1>
-            <button class="compra__botones">
-                <span class="volver__boton">&#8592;</span> Volver
-            </button>
-            <button class="compra__botones">
-                Aceptar y Pagar →
-            </button>
 
             <div class="compra__detalles">
                 <img src="imagen-pelicula.jpg" alt="" class="detalles__imagen">
 
-                <div class="detalles__informacion">
-                    <p class="informacion__item"><strong>Película:</strong> Shin Chan</p>
-                    <p class="informacion__item"><strong>Cine:</strong> El Butacazo</p>
-                    <p class="informacion__item"><strong>Sala:</strong> Sala 33</p>
-                    <p class="informacion__item"><strong>Día:</strong> 07-11-2024</p>
-                    <p class="informacion__item"><strong>Hora:</strong> 20:00</p>
-                    <p class="informacion__item"><strong>Forma de pago:</strong> Tarjeta bancaria</p>
-                </div>
-            </div>
-
-            <div class="compra__resumen">
-                <table class="resumen__tabla">
-                    <thead class="tabla__encabezado">
-                        <tr>
+                <div class="compra__detalles">
+                    <div class="detalles__informacion">
+                      <p class="informacion__item"><strong>Película:</strong> Shin Chan</p>
+                      <p class="informacion__item"><strong>Cine:</strong> El Butacazo</p>
+                      <p class="informacion__item"><strong>Sala:</strong> Sala 33</p>
+                      <p class="informacion__item"><strong>Día:</strong> 07-11-2024</p>
+                      <p class="informacion__item"><strong>Hora:</strong> 20:00</p>
+                      <p class="informacion__item"><strong>Forma de pago:</strong> Tarjeta bancaria</p>
+                    </div>
+                    <div class="compra__resumen">
+                      <table class="resumen__tabla">
+                        <thead class="tabla__encabezado">
+                          <tr>
                             <th>Fila</th>
                             <th>Butaca</th>
                             <th>Precio</th>
                             <th>Total</th>
-                        </tr>
-                    </thead>
-                    <tbody class="tabla__cuerpo">
-                        <tr>
+                          </tr>
+                        </thead>
+                        <tbody class="tabla__cuerpo">
+                          <tr>
                             <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
-                        </tr>
-                    </tbody>
-                </table>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <div class="resumen__detalles">
+                        <p><strong>Total compra:</strong></p>
+                    </div>
+                    </div>
+                  </div>
+            
 
-                <div class="resumen__detalles">
-                    <p><strong>Total compra:</strong></p>
-                </div>
 
-                <p class="resumen__nota">
-                    * Impuestos incluidos. El total incluye todos los costes de gestión que pudieran derivarse de la
-                    operación de compra.
-                </p>
             </div>
-
         </section>
-
+        <p class="resumen__nota">
+            * Impuestos incluidos. El total incluye todos los costes de gestión que pudieran derivarse de la
+            operación de compra.
+        </p>
         <section class="cliente">
             <h2 class="cliente__titulo">Datos del Cliente</h2>
             <form class="cliente__formulario" action="#" method="post">

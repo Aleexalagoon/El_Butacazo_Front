@@ -1,0 +1,185 @@
+html, body {
+  height: 100%;
+}
+
+.pagina {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #222;
+  margin: 0;
+}
+
+.pagina__contenido {
+  flex: 1;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  color: #222;
+}
+
+.compra {
+  padding: 20px;
+  padding: 20px;
+  background-color: #fff;
+  color: #222;
+}
+@media (min-width: 768px) {
+  .compra {
+    padding: 30px;
+  }
+}
+@media (min-width: 1024px) {
+  .compra {
+    padding: 40px;
+  }
+}
+.compra__titulo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #00c4ff;
+}
+.compra__detalles {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+@media (min-width: 768px) {
+  .compra__detalles {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+.compra__detalles .detalles__informacion {
+  flex: 1;
+  padding: 15px;
+  border-radius: 5px;
+}
+.compra__detalles .detalles__informacion .informacion__item {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+.compra__detalles .detalles__informacion .informacion__item strong {
+  font-weight: bold;
+}
+.compra__detalles .compra__resumen {
+  flex: 1;
+  margin-top: 20px;
+}
+@media (min-width: 768px) {
+  .compra__detalles .compra__resumen {
+    margin-top: 0;
+  }
+}
+.compra__detalles .compra__resumen .resumen__tabla {
+  width: 100%;
+  border-collapse: collapse;
+}
+.compra__detalles .compra__resumen .resumen__tabla .tabla__encabezado {
+  color: black;
+}
+.compra__detalles .compra__resumen .resumen__tabla th,
+.compra__detalles .compra__resumen .resumen__tabla td {
+  border: none;
+  padding: 10px;
+  text-align: center;
+}
+.compra__detalles .compra__resumen .resumen__detalles {
+  text-align: left;
+  font-weight: bold;
+  margin-top: 10px;
+}
+.compra__detalles .compra__resumen .resumen__nota {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+.cliente {
+  padding: 20px;
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .cliente {
+    padding: 30px;
+  }
+}
+@media (min-width: 1024px) {
+  .cliente {
+    padding: 40px;
+  }
+}
+.cliente__titulo {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #00c4ff;
+}
+.cliente__formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.cliente__formulario .formulario__campo {
+  display: flex;
+  flex-direction: column;
+}
+.cliente__formulario .formulario__campo .campo__etiqueta {
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+.cliente__formulario .formulario__campo .campo__entrada {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+.cliente__formulario .formulario__terminos {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.cliente__formulario .formulario__terminos .terminos__checkbox {
+  cursor: pointer;
+}
+.cliente__formulario .formulario__terminos .terminos__etiqueta {
+  font-size: 0.8rem;
+  color: #666;
+}
+.cliente__formulario .formulario__metodos-pago {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.cliente__formulario .formulario__metodos-pago .metodos-pago__icono {
+  max-width: 50px;
+  max-height: 50px;
+}
+.cliente__formulario .compra__botones-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.cliente__formulario .compra__botones-container .compra__botones {
+  flex: 1;
+  background-color: #00c4ff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+}
+.cliente__formulario .compra__botones-container .compra__botones:hover {
+  background-color: #00c4ff;
+}
+
+/*# sourceMappingURL=ConfirmacionCompraPeliculas.css.map */

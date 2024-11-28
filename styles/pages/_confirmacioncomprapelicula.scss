@@ -1,6 +1,32 @@
 @use "../base/variables" as *;
 @use "../base/mixsins" as *;
 
+html, body {
+  height: 100%;
+}
+
+
+  .pagina {
+    font-family: $font-family;
+    background-color: $color-light;
+    color: $color-dark;
+    margin: 0;
+  }
+
+
+.pagina__contenido {
+  flex: 1;
+}
+
+  body {
+    font-family: $font-family;
+    margin: 0;
+    padding: 0;
+    background-color: $color-light;
+    color: $color-dark;
+  }
+  
+
 .compra {
   @include pagina-contenido;
   background-color: $color-light;
@@ -11,42 +37,23 @@
     font-weight: bold;
     text-align: center;
     margin-bottom: 20px;
-  }
-
-  &__botones {
-    background-color: $color-primary;
-    color: $color-light;
-    border: none;
-    border-radius: $border-radius;
-    padding: 10px 20px;
-    font-size: 1rem;
-    margin: 10px 0;
-    cursor: pointer;
-    text-align: center;
-    display: block;
-    width: 100%;
-    max-width: 200px;
-
-    &:hover {
-      background-color: $color-primary-hover;
-    }
+    color: $color-primary; 
   }
 
   &__detalles {
-    @include flex-column-center;
+    display: flex;
+    flex-direction: column;
     gap: 15px;
 
-    .detalles__imagen {
-      max-width: 100%;
-      border-radius: $border-radius;
+    @media (min-width: 768px) { 
+      flex-direction: row;
+      align-items: flex-start;
     }
 
     .detalles__informacion {
-      background-color: $color-muted;
+      flex: 1;
       padding: 15px;
       border-radius: $border-radius;
-      text-align: left;
-      width: 100%;
 
       .informacion__item {
         font-size: 0.9rem;
@@ -57,37 +64,42 @@
         }
       }
     }
-  }
 
-  &__resumen {
-    margin-top: 20px;
+    .compra__resumen {
+      flex: 1;
+      margin-top: 20px;
 
-    .resumen__tabla {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 15px;
-
-      .tabla__encabezado {
-        background-color: $color-primary;
-        color: $color-light;
+      @media (min-width: 768px) {
+        margin-top: 0;
       }
 
-      th, td {
-        border: 1px solid $border-color;
-        padding: 10px;
-        text-align: center;
+      .resumen__tabla {
+        width: 100%;
+        border-collapse: collapse;
+
+        .tabla__encabezado {
+          color: black;
+        }
+
+        th,
+        td {
+          border: none;
+          padding: 10px;
+          text-align: center;
+        }
       }
-    }
 
-    .resumen__detalles {
-      text-align: right;
-      font-weight: bold;
-    }
+      .resumen__detalles {
+        text-align: left; 
+        font-weight: bold;
+        margin-top: 10px;
+      }
 
-    .resumen__nota {
-      font-size: 0.8rem;
-      color: $color-helper;
-      margin-top: 10px;
+      .resumen__nota {
+        font-size: 0.8rem;
+        color: $color-helper;
+        margin-top: 10px;
+      }
     }
   }
 }
@@ -100,6 +112,7 @@
     font-weight: bold;
     margin-bottom: 20px;
     text-align: center;
+    color:$color-primary;
   }
 
   &__formulario {
@@ -158,6 +171,18 @@
 
       .compra__botones {
         flex: 1;
+        background-color: $color-primary;
+        color: $color-light;
+        border: none;
+        border-radius: $border-radius;
+        padding: 10px 20px;
+        font-size: 1rem;
+        cursor: pointer;
+        text-align: center;
+
+        &:hover {
+          background-color: $color-primary-hover;
+        }
       }
     }
   }
