@@ -145,8 +145,10 @@ async function reservarPutacas() {
             throw new Error('Error al reservar las butacas');
         }
         alert('Butacas reservadas con éxito');
-        cargarSesion(sesionId); // Recarga las putacas
+        window.location.href = '../HTML/ConfirmacionCompraPelicula.html'; 
     } catch (error) {
         console.error('Error:', error);
+        alert('Hubo un problema al reservar las butacas. Inténtalo de nuevo más tarde.');
     }
 }
+
