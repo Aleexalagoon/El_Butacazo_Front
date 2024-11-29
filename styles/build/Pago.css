@@ -87,7 +87,7 @@ html, body {
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 10px;
-  width: 100%;
+  width: 70%;
 }
 .pago__formulario .pago__input:focus {
   border-color: #00c4ff;

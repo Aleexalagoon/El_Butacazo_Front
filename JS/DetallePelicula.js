@@ -1,35 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const API_URL = "https://localhost:7053/api"; // Cambia el puerto si es necesario
+    const API_URL = "https://localhost:7053/api"; // Cambia si usas otro puerto
+    const params = new URLSearchParams(window.location.search);
+    const peliculaId = params.get("id"); // Obtiene el ID de la película desde la URL
 
-    // Obtener el parámetro `id` de la URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const peliculaId = parseInt(urlParams.get("id"));
-    localStorage.setItem('prueba', peliculaId)
-
-    // Validar si el `id` es válido
-    if (!peliculaId || isNaN(peliculaId)) {
-        mostrarError("El ID de la película no es válido o no se proporcionó.");
+    if (!peliculaId) {
+        alert("No se encontró el ID de la película en la URL.");
+        window.location.href = "../HTML/index.html"; // Redirige al índice si no hay ID
         return;
     }
 
     // Elementos del DOM
+    const peliculaTitulo = document.getElementById("peliculaTitulo");
     const peliculaImagen = document.getElementById("peliculaImagen");
-    const peliculaDescipcion = document.getElementById("peliculaDescripcion")
+    const peliculaDescripcion = document.getElementById("peliculaDescripcion");
     const peliculaGenero = document.getElementById("peliculaGenero");
     const peliculaDirector = document.getElementById("peliculaDirector");
     const peliculaDuracion = document.getElementById("peliculaDuracion");
-    const peliculaFechaEstreno = document.getElementById("peliculaEstreno");
-    const funcionesContainer = document.getElementById("funcionesContainer");
+    const peliculaEstreno = document.getElementById("peliculaEstreno");
+    const reservarBtn = document.getElementById("reservar-btn");
 
-    // Mostrar mensaje de error en el DOM
-    function mostrarError(mensaje) {
-        const errorContainer = document.createElement("p");
-        errorContainer.textContent = mensaje;
-        errorContainer.style.color = "red";
-        funcionesContainer.appendChild(errorContainer);
-    }
-
-    // Cargar detalles de la película
+    // Función para cargar los detalles de la película
     const cargarDetallePelicula = async () => {
         try {
             const response = await fetch(`${API_URL}/Peliculas/${peliculaId}`);
@@ -39,55 +29,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const pelicula = await response.json();
 
-            // Actualizar elementos del DOM con los datos de la película
-            peliculaImagen.src = pelicula.imagen || "../img/default-poster.png";
-            peliculaDescipcion.textContent = pelicula.descripcion || "Descripcion no disponible";
+            // Actualizar los elementos del DOM con los datos de la película
             peliculaTitulo.textContent = pelicula.titulo || "Título no disponible";
+            peliculaImagen.src = pelicula.imagen || "../img/default-poster.png";
+            peliculaImagen.alt = pelicula.titulo || "Poster de la película";
+            peliculaDescripcion.textContent = pelicula.descripcion || "Descripción no disponible";
             peliculaGenero.textContent = pelicula.genero || "Género no disponible";
             peliculaDirector.textContent = pelicula.director || "Director no disponible";
             peliculaDuracion.textContent = pelicula.duracion || "Duración no disponible";
-            peliculaFechaEstreno.textContent = pelicula.estreno
+            peliculaEstreno.textContent = pelicula.estreno
                 ? new Date(pelicula.estreno).toLocaleDateString()
                 : "Fecha de estreno no disponible";
-
-            // Cargar funciones asociadas a la película
-            cargarFuncionesPelicula();
         } catch (error) {
             console.error("Error al cargar los detalles de la película:", error);
-            mostrarError("No se pudieron cargar los detalles de la película.");
+            alert("Hubo un error al cargar los detalles de la película.");
         }
     };
 
-    // Cargar funciones asociadas a la película
-    const cargarFuncionesPelicula = async () => {
-        try {
-            const response = await fetch(`${API_URL}/Funcion/pelicula/${peliculaId}`);
-            if (!response.ok) {
-                throw new Error(`Error al obtener las funciones de la película (HTTP ${response.status}).`);
-            }
+    // Evento para el botón "Reservar"
+    if (reservarBtn) {
+        reservarBtn.addEventListener("click", (event) => {
+            event.preventDefault(); // Evitar comportamiento predeterminado
+            window.location.href = `../HTML/CompraEntradas.html?id=${peliculaId}`;
+        });
+    } else {
+        console.error('Error: No se encontró el botón con ID "reservar-btn".');
+    }
 
-            const funciones = await response.json();
-
-            // Limpiar contenedor de funciones
-            funcionesContainer.innerHTML = "";
-
-            if (funciones.length === 0) {
-                funcionesContainer.textContent = "No hay funciones disponibles para esta película.";
-                return;
-            }
-
-            // Mostrar funciones en el DOM
-            funciones.forEach((funcion) => {
-                const funcionElement = document.createElement("p");
-                funcionElement.textContent = `${funcion.dia} - ${funcion.horaFormatted} - Sala ${funcion.sala}`;
-                funcionesContainer.appendChild(funcionElement);
-            });
-        } catch (error) {
-            console.error("Error al cargar las funciones de la película:", error);
-            mostrarError("No se pudieron cargar las funciones de la película.");
-        }
-    };
-
-    // Ejecutar la carga de datos
+    // Ejecutar la función para cargar los detalles
     cargarDetallePelicula();
 });

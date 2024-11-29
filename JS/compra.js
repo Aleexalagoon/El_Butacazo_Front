@@ -1,31 +1,40 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
     const API_URL = "https://localhost:7053/api";
 
-    const cargarPeliculaSeleccionada = async () => {
-        // Obtener el ID de la película desde la URL
-        const peliculaId = localStorage.getItem('prueba');
+    // Función para obtener el ID de la película desde la URL
+    const obtenerIdPeliculaDesdeURL = () => {
+        const params = new URLSearchParams(window.location.search);
+        return params.get("id");
+    };
 
-        if (!peliculaId) {
-            alert("No se encontró una película seleccionada.");
+    // Función principal para cargar los datos de la película
+    const cargarPeliculaSeleccionada = async () => {
+        const peliculaId = obtenerIdPeliculaDesdeURL();
+
+        if (!peliculaId || isNaN(peliculaId)) {
+            alert("ID de película no válido. Redirigiendo...");
+            window.location.href = "index.html"; // Redirigir a la página principal
             return;
         }
 
         try {
-            // Fetch de los detalles de la película
+            // Obtener datos de la película desde la API
             const response = await fetch(`${API_URL}/Peliculas/${peliculaId}`);
             if (!response.ok) {
                 throw new Error("Error al obtener los detalles de la película.");
             }
 
             const pelicula = await response.json();
+            console.log("Datos de la película desde la API:", pelicula);
 
-            // Actualizar los datos en la página
-            document.querySelector(".compra__titulo").textContent = pelicula.titulo;
-            document.querySelector(".compra__sala").textContent = `Sala: ${pelicula.sala}`;
+            // Actualizar la página con los datos de la película
+            document.querySelector(".compra__titulo").textContent = pelicula.titulo || "Título no disponible";
+            document.querySelector(".compra__sala").textContent = `Sala: ${pelicula.sala || "No asignada"}`;
             document.querySelector(".compra__precio-valor").textContent = `0.00€`; // Precio inicial
 
         } catch (error) {
-            console.error("Error al cargar la película seleccionada:", error);
+            console.error("Error al cargar los datos de la película:", error);
+            alert("Error al cargar los detalles de la película.");
         }
     };
 
@@ -58,8 +67,8 @@ document.addEventListener("DOMContentLoaded", () => {
         botonContinuar.addEventListener("click", () => {
             const cantidadEntradas = parseInt(inputCantidad.value, 10) || 0;
             if (cantidadEntradas > 0) {
-                // Aquí rediriges a la página de confirmación con los datos seleccionados
-                window.location.href = `Putacas.html?id=${localStorage.getItem('prueba')}&cantidad=${cantidadEntradas}&precio=${(cantidadEntradas * precioPorEntrada).toFixed(2)}`;
+                // Aquí rediriges a la página de selección de butacas con los datos seleccionados
+                window.location.href = `Putacas.html?id=${obtenerIdPeliculaDesdeURL()}&cantidad=${cantidadEntradas}&precio=${(cantidadEntradas * precioPorEntrada).toFixed(2)}`;
             } else {
                 alert("Por favor, seleccione al menos una entrada.");
             }
@@ -71,7 +80,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     };
 
-    // Cargar la película seleccionada y agregar lógica de entradas
+    // Cargar la película seleccionada desde la API
     cargarPeliculaSeleccionada();
+
+    // Agregar lógica para entradas
     agregarLogicaEntradas();
 });
