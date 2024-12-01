@@ -1,0 +1,116 @@
+@use "../base/variables" as *;
+@use "../base/mixsins" as *;
+
+
+.pagina {
+  font-family: $font-family;
+  background-color: $color-light;
+  color: $color-dark;
+  margin: 0;
+}
+
+// Sección de Contacto
+.contacto {
+  @include pagina-contenido;
+
+  &__titulo {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: $color-dark;
+    text-align: center;
+  }
+
+  &__texto {
+    line-height: $line-height;
+    color: $color-muted;
+    margin-bottom: 15px;
+    text-align: justify;
+  }
+
+  &__subtitulo {
+    font-size: 2em;
+    margin: 30px 0 20px;
+    color: $color-primary;
+    text-align: center;
+  }
+}
+
+// Formulario de Contacto
+.formulario-contacto {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  background-color: $color-light;
+
+  &__campos, &__campo {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__label {
+    margin-bottom: 5px;
+    color: $color-dark;
+    font-weight: bold;
+  }
+
+  &__input {
+    padding: 10px;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    font-size: 1em;
+
+    &:focus {
+      outline: none;
+      border-color: $color-primary;
+    }
+  }
+
+  &__checkbox {
+    margin-right: 10px;
+  }
+
+  &__aceptacion {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+
+    &__texto {
+      font-size: 0.9em;
+      color: $color-muted;
+      line-height: 1.4;
+
+      a {
+        color: $color-primary;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  &__boton {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2em;
+    background-color: $color-primary;
+    color: $color-light;
+    border: none;
+    border-radius: $border-radius;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: $color-primary-hover;
+    }
+
+    &:disabled {
+      background-color: $border-color;
+      cursor: not-allowed;
+    }
+  }
+}

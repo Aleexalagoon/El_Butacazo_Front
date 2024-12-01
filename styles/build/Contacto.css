@@ -1,0 +1,108 @@
+.pagina {
+  font-family: "Raleway", sans-serif;
+  background-color: #fff;
+  color: #222;
+  margin: 0;
+}
+
+.contacto {
+  padding: 20px;
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .contacto {
+    padding: 30px;
+  }
+}
+@media (min-width: 1024px) {
+  .contacto {
+    padding: 40px;
+  }
+}
+.contacto__titulo {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #222;
+  text-align: center;
+}
+.contacto__texto {
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+.contacto__subtitulo {
+  font-size: 2em;
+  margin: 30px 0 20px;
+  color: #00c4ff;
+  text-align: center;
+}
+
+.formulario-contacto {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+.formulario-contacto__campos, .formulario-contacto__campo {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.formulario-contacto__label {
+  margin-bottom: 5px;
+  color: #222;
+  font-weight: bold;
+}
+.formulario-contacto__input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+}
+.formulario-contacto__input:focus {
+  outline: none;
+  border-color: #00c4ff;
+}
+.formulario-contacto__checkbox {
+  margin-right: 10px;
+}
+.formulario-contacto__aceptacion {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+.formulario-contacto__aceptacion__texto {
+  font-size: 0.9em;
+  color: #555;
+  line-height: 1.4;
+}
+.formulario-contacto__aceptacion__texto a {
+  color: #00c4ff;
+  text-decoration: none;
+}
+.formulario-contacto__aceptacion__texto a:hover {
+  text-decoration: underline;
+}
+.formulario-contacto__boton {
+  width: 100%;
+  padding: 10px;
+  font-size: 1.2em;
+  background-color: #00c4ff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.formulario-contacto__boton:hover {
+  background-color: #00c4ff;
+}
+.formulario-contacto__boton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/*# sourceMappingURL=Contacto.css.map */

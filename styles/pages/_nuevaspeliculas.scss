@@ -1,0 +1,156 @@
+@use "../base/variables" as *;
+@use "../base/mixsins" as *;
+
+.pagina {
+  font-family: $font-family;
+  background-color: $color-light;
+  color: $color-dark;
+  margin: 0;
+}
+
+.cartelera {
+  padding: 40px 20px;
+  background-color: $color-light;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-items: center;
+  }
+
+  .pelicula {
+    background-color: $color-light;
+    border-radius: $border-radius;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    width: 100%;
+    max-width: 250px;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    &__portada {
+      width: 100%;
+      height: 350px; 
+      object-fit: cover; 
+      object-position: center; 
+    }
+
+    &__titulo {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: $color-dark;
+      margin: 10px 0;
+    }
+
+    &__fecha {
+      font-size: 1rem;
+      color: $color-muted;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background: url('https://example.com/banner.jpg') no-repeat center center / cover; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: $color-light;
+
+  &__contenido {
+    color: $color-light;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: $border-radius;
+    max-width: 600px;
+  }
+
+  &__titulo {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+  &__descripcion {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+
+  &__boton {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: $color-primary;
+    color: $color-light;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: $border-radius;
+    transition: background-color 0.3s ease;
+  }
+}
+
+.peliculas__destacadas {
+  color: $color-primary;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 2rem;
+}
+
+.peliculas {
+  &__lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .pelicula {
+    text-align: center;
+    background-color: $color-light;
+    border-radius: $border-radius;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    &__imagen {
+      width: 100%;
+      max-width: 250px;
+      height: 350px; 
+      object-fit: cover; 
+      object-position: center; 
+      border-radius: $border-radius;
+    }
+
+    &__titulo {
+      margin-top: 10px;
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: $color-dark;
+    }
+
+    &__fecha {
+      margin-top: 5px;
+      font-size: 1rem;
+      color: $color-muted;
+    }
+  }
+}

@@ -1,0 +1,57 @@
+@use "../base/variables" as *;
+@use "../base/mixsins" as *;
+
+
+.pagina {
+  font-family: $font-family;
+  background-color: $color-light;
+  color: $color-dark;
+  margin: 0;
+}
+.politica-privacidad {
+  @include pagina-contenido;
+
+  &__titulo {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: $color-dark;
+    text-align: center;
+  }
+
+  &__articulo {
+    margin-bottom: 30px;
+
+    &__subtitulo {
+      font-size: 1.8em;
+      margin-bottom: 10px;
+      color: $color-primary;
+    }
+
+    &__texto {
+      line-height: $line-height;
+      color: $color-muted;
+      margin-bottom: 15px;
+      text-align: justify;
+    }
+
+    &__lista {
+      margin-left: 20px;
+      list-style-type: disc;
+
+      &__item {
+        margin-bottom: 10px;
+        line-height: $line-height;
+        color: $color-helper;
+      }
+    }
+  }
+
+  &__enlace {
+    color: $color-primary;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

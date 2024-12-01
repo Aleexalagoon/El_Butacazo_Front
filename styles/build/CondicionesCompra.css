@@ -1,0 +1,40 @@
+.pagina {
+  font-family: "Raleway", sans-serif;
+  background-color: #fff;
+  color: #222;
+  margin: 0;
+}
+
+.condiciones-compra {
+  padding: 20px;
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .condiciones-compra {
+    padding: 30px;
+  }
+}
+@media (min-width: 1024px) {
+  .condiciones-compra {
+    padding: 40px;
+  }
+}
+.condiciones-compra__titulo {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #222;
+}
+.condiciones-compra__articulo {
+  margin-bottom: 20px;
+}
+.condiciones-compra__articulo__subtitulo {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #00c4ff;
+}
+.condiciones-compra__articulo__texto {
+  line-height: 1.6;
+  color: #555;
+}
+
+/*# sourceMappingURL=CondicionesCompra.css.map */

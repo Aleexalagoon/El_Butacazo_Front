@@ -1,0 +1,229 @@
+@use "../base/variables" as *;
+@use "../base/mixsins" as *;
+
+body {
+    margin: 0;
+    font-family: $font-family;
+    line-height: $line-height;
+    color: $color-dark;
+  }
+  
+  
+  .contenedor {
+    @include pagina-contenido;
+  
+    .barra-navegacion {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      background-color: $color-light;
+      border-bottom: 1px solid $border-color;
+  
+      &__boton {
+        background-color: $color-primary;
+        color: $color-light;
+        border: none;
+        padding: 10px 15px;
+        border-radius: $border-radius;
+        cursor: pointer;
+        font-weight: bold;
+        text-decoration: none;
+        margin-top: 30px;
+  
+        &:hover {
+          background-color: $color-primary-hover;
+        }
+  
+        &--volver {
+          @include responsive(font-size, 14px, 16px, 18px);
+        }
+  
+        &--continuar {
+          @include responsive(font-size, 14px, 16px, 18px);
+        }
+      }
+    }
+  }
+
+
+
+
+
+
+.botones-navegacion {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    padding: 0 20px;
+}
+
+.boton-navegacion {
+    background-color: #00c4ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.boton-navegacion:hover {
+    background-color: #009ec1;
+}
+
+.boton-navegacion--volver {
+    align-self: flex-start;
+}
+
+.boton-navegacion--continuar {
+    align-self: flex-end;
+}
+
+
+
+
+
+
+  
+  .contenedor-centrado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    max-width: $max-width-tablet; // Puedes ajustar el ancho máximo según tu diseño
+
+    #sesion-info {
+        margin-bottom: 20px;
+    }
+
+    #reservar-btn {
+        margin-top: 20px;
+    }
+}
+
+  .asientos {
+    @include flex-column-center;
+    margin-top: 20px;
+
+    &__filas {
+      display: grid;
+      grid-template-columns: repeat(10, auto); // Ajustar el número de columnas según sea necesario
+      grid-gap: 15px; // Ajustar el espaciado entre butacas
+      justify-content: center; // Asegura que la cuadrícula se centre horizontalmente
+      align-items: center; // Alinea las butacas verticalmente dentro del contenedor
+      width: auto; // Ajustar el ancho automáticamente
+      margin: 0 auto; // Centrar el contenedor en la pantalla
+
+      @include responsive(grid-gap, 10px, 15px, 20px);
+      @include responsive(max-width, $max-width-mobile, $max-width-tablet, 100%);
+
+      @media (min-width: 768px) {
+        max-width: $max-width-tablet;
+      }
+    }
+  
+    .asiento {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      width: 100%;
+      height: auto;
+  
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: $border-radius;
+      }
+  
+      &--libre {
+        img {
+          filter: brightness(1);
+        }
+      }
+  
+      &--ocupado {
+        img {
+          filter: grayscale(100%);
+        }
+      }
+  
+      &--seleccionado {
+        img {
+          border: 2px solid $color-primary;
+        }
+      }
+  
+    }
+  
+    &__pantalla {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: $border-color;
+      text-align: center;
+      width: 100%;
+      max-width: $max-width-mobile;
+  
+      @include responsive(max-width, $max-width-mobile, $max-width-tablet, 100%);
+      @include responsive(padding, 10px, 15px, 20px);
+    }
+  }
+  
+
+  .leyenda {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  
+    &__item {
+      @include flex-column-center;
+      text-align: center;
+  
+      .leyenda__asiento {
+        width: 30px;
+        height: 30px;
+        margin-bottom: 5px;
+        display: block;
+  
+        &--libre {
+          background-color: $color-primary;
+        }
+  
+        &--seleccionado {
+          background-color: white;
+          border: 2px solid orange;
+        }
+  
+        &--ocupado {
+          background-color: $color-helper;
+        }
+      }
+  
+      .leyenda__texto {
+        font-size: 12px;
+        @include responsive(font-size, 12px, 14px, 16px);
+      }
+    }
+  }
+  
+
+  .pie {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: $border-color;
+    text-align: center;
+  
+    &__copyright {
+      color: $color-muted;
+      font-size: 12px;
+      @include responsive(font-size, 12px, 14px, 16px);
+    }
+  }

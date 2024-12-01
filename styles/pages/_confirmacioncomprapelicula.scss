@@ -1,0 +1,189 @@
+@use "../base/variables" as *;
+@use "../base/mixsins" as *;
+
+html, body {
+  height: 100%;
+}
+
+
+  .pagina {
+    font-family: $font-family;
+    background-color: $color-light;
+    color: $color-dark;
+    margin: 0;
+  }
+
+
+.pagina__contenido {
+  flex: 1;
+}
+
+  body {
+    font-family: $font-family;
+    margin: 0;
+    padding: 0;
+    background-color: $color-light;
+    color: $color-dark;
+  }
+  
+
+.compra {
+  @include pagina-contenido;
+  background-color: $color-light;
+  color: $color-dark;
+
+  &__titulo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: $color-primary; 
+  }
+
+  &__detalles {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    @media (min-width: 768px) { 
+      flex-direction: row;
+      align-items: flex-start;
+    }
+
+    .detalles__informacion {
+      flex: 1;
+      padding: 15px;
+      border-radius: $border-radius;
+
+      .informacion__item {
+        font-size: 0.9rem;
+        margin-bottom: 5px;
+
+        strong {
+          font-weight: bold;
+        }
+      }
+    }
+
+    .compra__resumen {
+      flex: 1;
+      margin-top: 20px;
+
+      @media (min-width: 768px) {
+        margin-top: 0;
+      }
+
+      .resumen__tabla {
+        width: 100%;
+        border-collapse: collapse;
+
+        .tabla__encabezado {
+          color: black;
+        }
+
+        th,
+        td {
+          border: none;
+          padding: 10px;
+          text-align: center;
+        }
+      }
+
+      .resumen__detalles {
+        text-align: left; 
+        font-weight: bold;
+        margin-top: 10px;
+      }
+
+      .resumen__nota {
+        font-size: 0.8rem;
+        color: $color-helper;
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+.cliente {
+  @include pagina-contenido;
+
+  &__titulo {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color:$color-primary;
+  }
+
+  &__formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    .formulario__campo {
+      display: flex;
+      flex-direction: column;
+
+      .campo__etiqueta {
+        margin-bottom: 5px;
+        font-weight: bold;
+        font-size: 0.9rem;
+      }
+
+      .campo__entrada {
+        padding: 10px;
+        border: 1px solid $border-color;
+        border-radius: $border-radius;
+        font-size: 1rem;
+      }
+    }
+
+    .formulario__terminos {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      .terminos__checkbox {
+        cursor: pointer;
+      }
+
+      .terminos__etiqueta {
+        font-size: 0.8rem;
+        color: $color-helper;
+      }
+    }
+
+    .formulario__metodos-pago {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+
+      .metodos-pago__icono {
+        max-width: 50px;
+        max-height: 50px;
+      }
+    }
+
+    .compra__botones-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+
+      .compra__botones {
+        flex: 1;
+        background-color: $color-primary;
+        color: $color-light;
+        border: none;
+        border-radius: $border-radius;
+        padding: 10px 20px;
+        font-size: 1rem;
+        cursor: pointer;
+        text-align: center;
+
+        &:hover {
+          background-color: $color-primary-hover;
+        }
+      }
+    }
+  }
+}

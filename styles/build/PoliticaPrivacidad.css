@@ -1,0 +1,59 @@
+.pagina {
+  font-family: "Raleway", sans-serif;
+  background-color: #fff;
+  color: #222;
+  margin: 0;
+}
+
+.politica-privacidad {
+  padding: 20px;
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .politica-privacidad {
+    padding: 30px;
+  }
+}
+@media (min-width: 1024px) {
+  .politica-privacidad {
+    padding: 40px;
+  }
+}
+.politica-privacidad__titulo {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #222;
+  text-align: center;
+}
+.politica-privacidad__articulo {
+  margin-bottom: 30px;
+}
+.politica-privacidad__articulo__subtitulo {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+  color: #00c4ff;
+}
+.politica-privacidad__articulo__texto {
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+.politica-privacidad__articulo__lista {
+  margin-left: 20px;
+  list-style-type: disc;
+}
+.politica-privacidad__articulo__lista__item {
+  margin-bottom: 10px;
+  line-height: 1.6;
+  color: #666;
+}
+.politica-privacidad__enlace {
+  color: #00c4ff;
+  text-decoration: none;
+}
+.politica-privacidad__enlace:hover {
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=PoliticaPrivacidad.css.map */
