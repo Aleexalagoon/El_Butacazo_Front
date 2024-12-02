@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalles de Compra</title>
     <link rel="icon" type="image" href="/img/logo.png">
-    <link rel="stylesheet" href="../styles/build/ConfirmacionCompraPeliculas.css">
+    <link rel="stylesheet" href="../styles/build//ConfirmacionCompraPelicula.css">
     <link rel="stylesheet" href="../styles/build/Header.css">
     <link rel="stylesheet" href="../styles/build/Footer.css">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
@@ -41,6 +41,17 @@
                             required>
                     </div>
                     <div class="formulario__campo">
+                        <label for="direccion" class="campo__etiqueta">Direccion</label>
+                        <input type="direccion" id="direccion" name="direccion" class="campo__entrada" placeholder="Introduzca su direccion"
+                            required>
+                    </div>
+                    <div class="formulario__campo">
+                        <label for="cp" class="campo__etiqueta">CP</label>
+                        <input type="cp" id="cp" name="cp" class="campo__entrada" placeholder="Introduzca su nombre"
+                            required>
+                    </div>
+                    
+                    <div class="formulario__campo">
                         <label for="repetir-email" class="campo__etiqueta">Repita Email (Requerido)</label>
                         <input type="email" id="repetir-email" name="repetir-email" class="campo__entrada"
                             placeholder="Introduzca su email de nuevo" required>
@@ -56,10 +67,6 @@
                             Al pulsar Aceptar, acepto los Términos y condiciones y la Política de privacidad de
                             comprentradas.com.
                         </label>
-                    </div>
-                    <div class="formulario__metodos-pago">
-                        <img src="visa.png" alt="Visa" class="metodos-pago__icono">
-                        <img src="mastercard.png" alt="Mastercard" class="metodos-pago__icono">
                     </div>
                     <div class="compra__botones-container">
                         <button class="compra__botones" type="button" onclick="window.history.back();">
