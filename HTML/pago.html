@@ -32,48 +32,43 @@
             </nav>
         </div>
     </header>
-
-    <section class="pago">
-        <div class="pago__datos-operacion">
-            <h2 class="pago__titulo">DATOS DE LA OPERACIÓN</h2>
-            <p class="pago__dato"><span class="pago__etiqueta">IMPORTE: 10€</span> <span class="importe"></span></p>
-            <p class="pago__dato"><span class="pago__etiqueta">PELICULA: Torrente 3</span> <span class="pelicula"></span></p>
-            <p class="pago__dato"><span class="pago__etiqueta">FECHA: 4/12/2024</span> <span class="fecha"></span></p>
-            <p class="pago__dato"><span class="pago__etiqueta">SALA: Sala 5</span> <span class="sala"></span></p>
-            <p class="pago__dato"><span class="pago__etiqueta">HORA: 21:00</span> <span class="hora"></span></p>
-            <p class="pago__dato"><span class="pago__etiqueta">BUTACAS: 74-75</span> <span class="butacas"></span></p>
-            
-        </div>
-
-
-        <div class="pago__tarjeta">
-            <h2 class="pago__titulo">PAGAR CON TARJETA</h2>
-            <div class="pago__logos">
-
-                <img src="" alt="Visa">
-                <img src="" alt="MasterCard">
+    <main class="principal">
+        <section class="pago">
+            <div class="pago__datos-operacion">
+                <h2 class="pago__titulo">DATOS DE LA OPERACIÓN</h2>
+                <p class="pago__dato"><span class="pago__etiqueta">IMPORTE: 10€</span></p>
+                <p class="pago__dato"><span class="pago__etiqueta">PELICULA: Shin-Chan</span></p>
+                <p class="pago__dato"><span class="pago__etiqueta">FECHA: 4/12/2024</span></p>
+                <p class="pago__dato"><span class="pago__etiqueta">SALA: Sala 1</span></p>
+                <p class="pago__dato"><span class="pago__etiqueta">HORA: 16:00</span></p>
+                <p class="pago__dato"><span class="pago__etiqueta">BUTACAS: 74-75</span></p>
             </div>
 
-            <form class="pago__formulario" action="#" method="post">
-                <label class="pago__label" for="numero-tarjeta">Nº de tarjeta</label>
-                <input class="pago__input" type="text" id="numero-tarjeta" name="numero-tarjeta" required>
-
-                <label class="pago__label" for="caducidad">Caducidad</label>
-                <input class="pago__input" type="text" id="caducidad" name="caducidad" placeholder="MM/AA" required>
-
-                <label class="pago__label" for="cvv">CVV</label>
-                <input class="pago__input" type="text" id="cvv" name="cvv" required>
-
-                <div class="pago__botones">
-                    <button class="pago__boton" type="button">CANCELAR</button>
-                    <a href="../HTML/index.html"
-                    <button class="pago__boton" type="submit">ACEPTAR</button>
-                    </a>
-                    
+            <div class="pago__tarjeta">
+                <h2 class="pago__titulo">PAGAR CON TARJETA</h2>
+                <div class="pago__logos">
+                    <img src="../img/Visa.PNG" alt="Visa">
                 </div>
-            </form>
-        </div>
-    </section>
+
+                <form class="pago__formulario" action="#" method="post">
+                    <label class="pago__label" for="numero-tarjeta">Nº de tarjeta</label>
+                    <input class="pago__input" type="text" id="numero-tarjeta" name="numero-tarjeta" required>
+
+                    <label class="pago__label" for="caducidad">Caducidad</label>
+                    <input class="pago__input" type="text" id="caducidad" name="caducidad" placeholder="MM/AA" required>
+
+                    <label class="pago__label" for="cvv">CVV</label>
+                    <input class="pago__input" type="text" id="cvv" name="cvv" required>
+
+                    <div class="pago__botones">
+                        <button class="pago__boton" type="button" onclick="window.history.back();">CANCELAR</button>
+                        <button class="pago__boton" type="submit">ACEPTAR</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
     <footer class="footer">
         <div class="footer__elbutacazo">
             <a href="../HTML/contacto.html" class="footer__enlace">Contacto</a>
