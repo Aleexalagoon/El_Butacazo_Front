@@ -3,29 +3,29 @@
 
 html, body {
   height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
-  .pagina {
-    font-family: $font-family;
-    background-color: $color-light;
-    color: $color-dark;
-    margin: 0;
-  }
-
-
-.pagina__contenido {
+main {
   flex: 1;
 }
 
-  body {
-    font-family: $font-family;
-    margin: 0;
-    padding: 0;
-    background-color: $color-light;
-    color: $color-dark;
-  }
-  
+footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  margin-top: auto;
+}
 
 .compra {
   @include pagina-contenido;
@@ -112,7 +112,7 @@ html, body {
     font-weight: bold;
     margin-bottom: 20px;
     text-align: center;
-    color:$color-primary;
+    color: $color-primary;
   }
 
   &__formulario {
@@ -153,24 +153,12 @@ html, body {
       }
     }
 
-    .formulario__metodos-pago {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-
-      .metodos-pago__icono {
-        max-width: 50px;
-        max-height: 50px;
-      }
-    }
-
     .compra__botones-container {
       display: flex;
       justify-content: space-between;
       gap: 10px;
 
       .compra__botones {
-        flex: 1;
         background-color: $color-primary;
         color: $color-light;
         border: none;
@@ -179,10 +167,21 @@ html, body {
         font-size: 1rem;
         cursor: pointer;
         text-align: center;
+        transition: background-color 0.3s ease;
 
         &:hover {
           background-color: $color-primary-hover;
         }
+      }
+
+      .volver__boton {
+        flex: 0.5; 
+        padding: 8px 16px; 
+        font-size: 0.9rem;
+      }
+
+      .aceptar__boton {
+        flex: 1; 
       }
     }
   }
