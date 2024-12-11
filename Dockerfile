@@ -1,10 +1,7 @@
-FROM node:lts-alpine
-
+FROM node:18
 WORKDIR /El_Butacazo_Front
 
 COPY package.json package-lock.json ./
-
-RUN npm install --production
 
 COPY . . 
 
