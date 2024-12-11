@@ -31,7 +31,7 @@ function actualizarNumeroEntradas(nuevasEntradas) {
 // Función para cargar una sesión específica y mostrar sus butacas
 async function cargarSesion(sesionId) {
     try {
-        const response = await fetch(`https://localhost:7053/api/sesiones/${sesionId}`);
+        const response = await fetch(`http://23.20.199.117/api/sesiones/${sesionId}`);
         if (!response.ok) {
             throw new Error('Error al cargar la sesión');
         }
@@ -135,7 +135,7 @@ async function reservarPutacas() {
     const sesionId = parseInt(params.get('id'), 10);
 
     try {
-        const response = await fetch(`https://localhost:7053/api/sesiones/${sesionId}/butacas`, {
+        const response = await fetch(`http://23.20.199.117/api/sesiones/${sesionId}/butacas`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(putacasSeleccionadas),

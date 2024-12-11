@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const API_URL = "https://localhost:7053/api"; // Cambia el puerto si es necesario
+    const API_URL = "http://23.20.199.117/api";
+
+
     const gridContainer = document.querySelector('.cartelera__grid'); // Contenedor de la cuadrícula
 
     // Función para cargar películas desde la API

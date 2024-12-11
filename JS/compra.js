@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", async () => {
-    const API_URL = "https://localhost:7053/api";
-
+    const API_URL = "http://23.20.199.117/api";
     // Función para obtener el ID de la película desde la URL
     const obtenerIdPeliculaDesdeURL = () => {
         const params = new URLSearchParams(window.location.search);
